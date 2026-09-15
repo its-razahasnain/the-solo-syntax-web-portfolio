@@ -7,6 +7,14 @@ import {
   Play,
   Zap,
 } from "lucide-react";
+import { TypewriterGradient } from "@/components/ui/typewriter-gradient";
+
+const heroWords = [
+  "That Make an Impact",
+  "That Feel Premium",
+  "That Drive Results",
+  "That People Remember",
+] as const;
 
 export function Hero() {
   return (
@@ -50,10 +58,7 @@ export function Hero() {
             <span className="block">I Build Modern Websites</span>
 
             <span className="mt-1 block">
-              That{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
-                Make an Impact
-              </span>
+              <TypewriterGradient words={heroWords} />
             </span>
           </h1>
 
