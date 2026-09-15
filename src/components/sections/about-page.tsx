@@ -48,18 +48,18 @@ export function AboutPage() {
         {/* Ambient glows */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -left-32 top-20 h-[420px] w-[420px] rounded-full bg-blue-500/[0.07] blur-[140px]"
+          className="pointer-events-none absolute -left-40 top-16 h-[300px] w-[300px] rounded-full bg-blue-500/[0.06] blur-[110px] sm:-left-32 sm:top-20 sm:h-[420px] sm:w-[420px] sm:bg-blue-500/[0.07] sm:blur-[140px]"
         />
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute right-[-100px] top-[-100px] h-[500px] w-[500px] rounded-full bg-purple-500/[0.07] blur-[150px]"
+          className="pointer-events-none absolute -right-32 -top-20 h-[340px] w-[340px] rounded-full bg-purple-500/[0.06] blur-[120px] sm:right-[-100px] sm:top-[-100px] sm:h-[500px] sm:w-[500px] sm:bg-purple-500/[0.07] sm:blur-[150px]"
         />
 
         {/* Subtle grid */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-[0.025]"
+          className="pointer-events-none absolute inset-0 opacity-[0.02] sm:opacity-[0.025]"
           style={{
             backgroundImage:
               "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
@@ -67,19 +67,19 @@ export function AboutPage() {
           }}
         />
 
-        <div className="relative mx-auto max-w-[1440px] px-5 pb-20 pt-16 sm:px-8 sm:pb-28 sm:pt-24 lg:px-10 lg:pb-32 lg:pt-28">
-          <div className="grid gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-20">
+        <div className="relative mx-auto max-w-[1440px] px-5 pb-16 pt-14 sm:px-8 sm:pb-28 sm:pt-24 lg:px-10 lg:pb-32 lg:pt-28">
+          <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-20">
             {/* Left */}
-            <div>
-              <div className="mb-7 flex items-center gap-3">
-                <span className="h-px w-8 bg-gradient-to-r from-blue-500 to-purple-500" />
+            <div className="min-w-0">
+              <div className="mb-6 flex items-center gap-3 sm:mb-7">
+                <span className="h-px w-7 shrink-0 bg-gradient-to-r from-blue-500 to-purple-500 sm:w-8" />
 
-                <span className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
+                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-zinc-500 sm:text-xs sm:tracking-[0.2em]">
                   About me
                 </span>
               </div>
 
-              <h1 className="max-w-4xl text-[clamp(3.25rem,6vw,6.5rem)] font-semibold leading-[0.9] tracking-[-0.065em] text-white">
+              <h1 className="max-w-4xl text-[clamp(3rem,11vw,6.5rem)] font-semibold leading-[0.9] tracking-[-0.065em] text-white sm:text-[clamp(3.25rem,6vw,6.5rem)]">
                 The person
                 <br />
                 behind the{" "}
@@ -88,27 +88,27 @@ export function AboutPage() {
                 </span>
               </h1>
 
-              <p className="mt-8 max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">
+              <p className="mt-7 max-w-2xl text-[15px] leading-7 text-zinc-400 sm:mt-8 sm:text-lg sm:leading-8">
                 I&apos;m a full-stack web developer focused on turning ideas
                 into modern, purposeful digital experiences that look great,
                 feel intuitive and perform the way they should.
               </p>
 
-              <div className="mt-9 flex flex-wrap items-center gap-5">
+              <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-4 sm:mt-9">
                 <Link
                   href="/projects"
-                  className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:opacity-90"
+                  className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:opacity-90"
                 >
                   Explore my work
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
 
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white"
+                  className="group inline-flex min-h-11 items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white"
                 >
                   Let&apos;s talk
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  <ArrowUpRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </Link>
               </div>
             </div>
@@ -117,28 +117,28 @@ export function AboutPage() {
             <div className="relative mx-auto w-full max-w-[500px] lg:ml-auto">
               <div
                 aria-hidden="true"
-                className="absolute -inset-8 rounded-[3rem] bg-gradient-to-br from-blue-500/[0.08] via-transparent to-purple-500/[0.08] blur-2xl"
+                className="absolute -inset-5 rounded-[2rem] bg-gradient-to-br from-blue-500/[0.07] via-transparent to-purple-500/[0.07] blur-2xl sm:-inset-8 sm:rounded-[3rem] sm:from-blue-500/[0.08] sm:to-purple-500/[0.08]"
               />
 
-              <div className="relative overflow-hidden rounded-[2rem] border border-white/[0.1] bg-[#090a0d]/90 shadow-2xl shadow-black/30">
+              <div className="relative overflow-hidden rounded-[1.5rem] border border-white/[0.1] bg-[#090a0d]/90 shadow-2xl shadow-black/30 sm:rounded-[2rem]">
                 {/* Window top */}
-                <div className="flex items-center justify-between border-b border-white/[0.07] px-5 py-4">
-                  <div className="flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-white/20" />
-                    <span className="h-2 w-2 rounded-full bg-white/20" />
-                    <span className="h-2 w-2 rounded-full bg-white/20" />
+                <div className="flex items-center justify-between border-b border-white/[0.07] px-4 py-3 sm:px-5 sm:py-4">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-white/20 sm:h-2 sm:w-2" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-white/20 sm:h-2 sm:w-2" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-white/20 sm:h-2 sm:w-2" />
                   </div>
 
-                  <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-zinc-600">
+                  <span className="max-w-[150px] truncate font-mono text-[9px] uppercase tracking-[0.14em] text-zinc-600 sm:max-w-none sm:text-[10px] sm:tracking-[0.18em]">
                     the-solo-syntax
                   </span>
                 </div>
 
                 {/* Visual content */}
-                <div className="relative min-h-[390px] overflow-hidden p-7 sm:min-h-[430px] sm:p-9">
+                <div className="relative min-h-[330px] overflow-hidden p-5 sm:min-h-[430px] sm:p-9">
                   <div
                     aria-hidden="true"
-                    className="absolute inset-0 opacity-[0.035]"
+                    className="absolute inset-0 opacity-[0.025] sm:opacity-[0.035]"
                     style={{
                       backgroundImage:
                         "linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)",
@@ -146,40 +146,41 @@ export function AboutPage() {
                     }}
                   />
 
-                  <div className="relative flex h-full min-h-[340px] flex-col justify-between">
+                  <div className="relative flex min-h-[290px] flex-col justify-between sm:min-h-[340px]">
                     <div>
-                      <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-600">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-600 sm:text-[11px] sm:tracking-[0.2em]">
                         Full-stack
                       </p>
 
-                      <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-600">
+                      <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-600 sm:text-[11px] sm:tracking-[0.2em]">
                         Web developer
                       </p>
                     </div>
 
-                    <div className="relative py-12">
-                      <div className="absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-blue-500/20 via-indigo-500/10 to-purple-500/20 blur-3xl" />
+                    <div className="relative py-10 sm:py-12">
+                      <div className="absolute left-1/2 top-1/2 h-36 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-blue-500/20 via-indigo-500/10 to-purple-500/20 blur-3xl sm:h-44 sm:w-44" />
 
-                      <div className="relative mx-auto flex h-40 w-40 items-center justify-center rounded-full border border-white/[0.1] bg-white/[0.025] shadow-[0_0_80px_rgba(99,102,241,0.08)]">
-                        <div className="flex h-28 w-28 items-center justify-center rounded-full border border-white/[0.08] bg-black/30">
-                          <span className="text-5xl font-semibold tracking-[-0.08em] text-white">
+                      <div className="relative mx-auto flex h-32 w-32 items-center justify-center rounded-full border border-white/[0.1] bg-white/[0.025] shadow-[0_0_80px_rgba(99,102,241,0.08)] sm:h-40 sm:w-40">
+                        <div className="flex h-22 w-22 items-center justify-center rounded-full border border-white/[0.08] bg-black/30 sm:h-28 sm:w-28">
+                          <span className="text-4xl font-semibold tracking-[-0.08em] text-white sm:text-5xl">
                             SS
                           </span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="flex items-end justify-between border-t border-white/[0.07] pt-5">
-                      <div>
-                        <p className="text-sm font-medium text-white">
+                    <div className="flex items-end justify-between gap-4 border-t border-white/[0.07] pt-4 sm:pt-5">
+                      <div className="min-w-0">
+                        <p className="truncate text-sm font-medium text-white">
                           The Solo Syntax
                         </p>
-                        <p className="mt-1 text-xs text-zinc-600">
+
+                        <p className="mt-1 text-[10px] text-zinc-600 sm:text-xs">
                           Design · Code · Performance
                         </p>
                       </div>
 
-                      <span className="font-mono text-xs text-zinc-600">
+                      <span className="shrink-0 font-mono text-[11px] text-zinc-600 sm:text-xs">
                         01
                       </span>
                     </div>
@@ -195,9 +196,9 @@ export function AboutPage() {
           MINDSET
       ========================================================= */}
       <section className="relative border-b border-white/[0.06]">
-        <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20 lg:px-10 lg:py-28">
+        <div className="mx-auto grid max-w-[1440px] gap-9 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20 lg:px-10 lg:py-28">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-500">
+            <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-500 sm:text-xs sm:tracking-[0.18em]">
               The mindset
             </p>
 
@@ -206,7 +207,7 @@ export function AboutPage() {
             </h2>
           </div>
 
-          <div className="max-w-3xl space-y-6 text-[15px] leading-8 text-zinc-400 sm:text-base">
+          <div className="max-w-3xl space-y-5 text-[15px] leading-7 text-zinc-400 sm:space-y-6 sm:text-base sm:leading-8">
             <p>
               I care about more than making something technically work. A
               website should feel intentional — every section, interaction and
@@ -232,10 +233,10 @@ export function AboutPage() {
           PROCESS
       ========================================================= */}
       <section className="relative border-b border-white/[0.06]">
-        <div className="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
-          <div className="mb-12 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+        <div className="mx-auto max-w-[1440px] px-5 py-16 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+          <div className="mb-10 flex flex-col justify-between gap-5 sm:mb-12 sm:flex-row sm:items-end">
             <div>
-              <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-zinc-500">
+              <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-500 sm:text-xs sm:tracking-[0.18em]">
                 How I work
               </p>
 
@@ -254,13 +255,13 @@ export function AboutPage() {
             {process.map((item) => (
               <div
                 key={item.number}
-                className="group px-1 py-8 md:px-8 md:py-10 first:md:pl-0 last:md:pr-0"
+                className="group px-0 py-7 sm:py-8 md:px-8 md:py-10 first:md:pl-0 last:md:pr-0"
               >
-                <span className="text-xs font-medium tracking-[0.16em] text-zinc-600">
+                <span className="text-[11px] font-medium tracking-[0.14em] text-zinc-600 sm:text-xs sm:tracking-[0.16em]">
                   {item.number}
                 </span>
 
-                <h3 className="mt-6 text-xl font-medium tracking-tight text-white">
+                <h3 className="mt-5 text-xl font-medium tracking-tight text-white sm:mt-6">
                   {item.title}
                 </h3>
 
@@ -268,7 +269,7 @@ export function AboutPage() {
                   {item.description}
                 </p>
 
-                <div className="mt-8 h-px w-10 bg-gradient-to-r from-blue-500 to-purple-500 opacity-60 transition-all duration-300 group-hover:w-16" />
+                <div className="mt-7 h-px w-10 bg-gradient-to-r from-blue-500 to-purple-500 opacity-60 transition-all duration-300 group-hover:w-16 sm:mt-8" />
               </div>
             ))}
           </div>
@@ -279,9 +280,9 @@ export function AboutPage() {
           CAPABILITIES
       ========================================================= */}
       <section className="relative border-b border-white/[0.06]">
-        <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20 lg:px-10 lg:py-28">
+        <div className="mx-auto grid max-w-[1440px] gap-10 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20 lg:px-10 lg:py-28">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-500">
+            <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-500 sm:text-xs sm:tracking-[0.18em]">
               Capabilities
             </p>
 
@@ -302,13 +303,13 @@ export function AboutPage() {
               return (
                 <div
                   key={capability.title}
-                  className="group rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6 transition-all duration-300 hover:border-white/[0.14] hover:bg-white/[0.035]"
+                  className="group rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5 transition-all duration-300 hover:border-white/[0.14] hover:bg-white/[0.035] sm:p-6"
                 >
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.03] text-zinc-400 transition-colors duration-300 group-hover:text-white">
                     <Icon className="h-5 w-5" strokeWidth={1.7} />
                   </div>
 
-                  <h3 className="mt-6 text-sm font-medium text-white sm:text-[15px]">
+                  <h3 className="mt-5 text-sm font-medium text-white sm:mt-6 sm:text-[15px]">
                     {capability.title}
                   </h3>
 
@@ -326,16 +327,16 @@ export function AboutPage() {
           CTA
       ========================================================= */}
       <section className="relative">
-        <div className="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/[0.09] bg-white/[0.025] px-6 py-12 sm:px-10 sm:py-14 lg:px-14">
+        <div className="mx-auto max-w-[1440px] px-5 py-16 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+          <div className="relative overflow-hidden rounded-[1.5rem] border border-white/[0.09] bg-white/[0.025] px-5 py-10 sm:rounded-[2rem] sm:px-10 sm:py-14 lg:px-14">
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute right-[-120px] top-[-180px] h-[400px] w-[400px] rounded-full bg-purple-500/[0.08] blur-[120px]"
+              className="pointer-events-none absolute -right-32 -top-32 h-[300px] w-[300px] rounded-full bg-purple-500/[0.07] blur-[100px] sm:right-[-120px] sm:top-[-180px] sm:h-[400px] sm:w-[400px] sm:bg-purple-500/[0.08] sm:blur-[120px]"
             />
 
-            <div className="relative flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
-              <div>
-                <p className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-500">
+            <div className="relative flex flex-col justify-between gap-8 sm:gap-10 lg:flex-row lg:items-end">
+              <div className="min-w-0">
+                <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-500 sm:text-xs sm:tracking-[0.18em]">
                   Let&apos;s build
                 </p>
 
@@ -350,19 +351,19 @@ export function AboutPage() {
 
               <Link
                 href="/contact"
-                className="group inline-flex w-fit shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:opacity-90"
+                className="group inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:opacity-90 sm:w-fit"
               >
                 Start a conversation
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                <ArrowUpRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </Link>
             </div>
 
             <Link
               href="/projects"
-              className="group relative mt-8 inline-flex items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white"
+              className="group relative mt-7 inline-flex min-h-10 items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white sm:mt-8"
             >
               Or explore my projects
-              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+              <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
