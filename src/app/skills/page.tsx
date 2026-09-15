@@ -4,7 +4,6 @@ import {
   ArrowRight,
   ArrowUpRight,
   Braces,
-  Database,
   LayoutTemplate,
   Server,
   Sparkles,
