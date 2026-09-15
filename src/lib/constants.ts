@@ -6,6 +6,25 @@ export const siteConfig = {
   description:
     "Modern websites built with clean code, thoughtful design and real performance.",
 
+  contact: {
+    email: "hello@the-solo-syntax.dev",
+  },
+
+  socialLinks: [
+    {
+      label: "GitHub",
+      href: "https://github.com",
+    },
+    {
+      label: "LinkedIn",
+      href: "https://linkedin.com",
+    },
+    {
+      label: "X",
+      href: "https://x.com",
+    },
+  ],
+
   navigation: [
     { label: "Home", href: "/" },
     { label: "Projects", href: "/projects" },
@@ -13,14 +32,34 @@ export const siteConfig = {
     { label: "Skills", href: "/skills" },
     { label: "Contact", href: "/contact" },
   ],
-
-  socialLinks: [
-    { label: "GitHub", href: "https://github.com" },
-    { label: "LinkedIn", href: "https://linkedin.com" },
-    { label: "X", href: "https://x.com" },
-    { label: "Instagram", href: "https://instagram.com" },
-  ],
 } as const;
+
+export const capabilities = [
+  {
+    title: "Frontend Development",
+    description:
+      "Responsive, accessible and polished interfaces built with modern frontend technologies.",
+    icon: "code",
+  },
+  {
+    title: "Backend Development",
+    description:
+      "Reliable APIs, server-side functionality and scalable application architecture.",
+    icon: "layers",
+  },
+  {
+    title: "UI / UX",
+    description:
+      "Thoughtful interfaces focused on clarity, usability and meaningful user experiences.",
+    icon: "pen",
+  },
+  {
+    title: "Full-Stack Development",
+    description:
+      "End-to-end digital experiences connecting strong frontend interfaces with dependable backend systems.",
+    icon: "users",
+  },
+] as const;
 
 export const projects = [
   {
@@ -55,28 +94,5 @@ export const projects = [
       "An immersive portfolio experience designed around visual storytelling.",
     variant: "lume",
     href: "/projects/lume",
-  },
-] as const;
-
-export const capabilities = [
-  {
-    title: "Modern Web Technologies",
-    description: "Next.js, React, TypeScript",
-    icon: "code",
-  },
-  {
-    title: "Clean & Maintainable Code",
-    description: "Scalable, efficient, future-ready",
-    icon: "layers",
-  },
-  {
-    title: "Design to Development",
-    description: "From UI/UX to deployment",
-    icon: "pen",
-  },
-  {
-    title: "Client-Focused Approach",
-    description: "Your vision, my priority",
-    icon: "users",
   },
 ] as const;
