@@ -1,7 +1,152 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 import { projects } from "@/lib/constants";
+
+type ProjectVariant = "tavern" | "nexora" | "velora" | "lume";
+
+function BrowserBar() {
+  return (
+    <div className="flex h-8 items-center gap-1.5 border-b border-white/[0.07] bg-[#090a0d] px-3">
+      <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
+      <span className="h-1.5 w-1.5 rounded-full bg-white/15" />
+      <span className="h-1.5 w-1.5 rounded-full bg-white/10" />
+
+      <div className="ml-3 flex h-4 flex-1 items-center rounded-full border border-white/[0.05] bg-white/[0.025] px-3">
+        <span className="font-mono text-[6px] text-zinc-700">
+          tavern-virid.vercel.app
+        </span>
+      </div>
+
+      <div className="w-3" />
+    </div>
+  );
+}
+
+function TavernMockup() {
+  return (
+    <div className="relative h-full min-h-[300px] w-full overflow-hidden bg-[#17130f] sm:min-h-[380px] lg:min-h-[430px]">
+      <Image
+        src="/projects/tavern/tavern-hero.webp"
+        alt="Tavern restaurant website homepage"
+        fill
+        priority
+        sizes="(max-width: 1024px) 90vw, 820px"
+        className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.025]"
+      />
+
+      <div className="absolute inset-0 bg-black/25" />
+
+      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-transparent" />
+
+      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/55 to-transparent" />
+
+      {/* Tavern navigation */}
+      <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between px-5 py-4 sm:px-8 sm:py-5">
+        <span className="font-serif text-sm tracking-[0.04em] text-white sm:text-base">
+          TAVERN
+        </span>
+
+        <div className="hidden items-center gap-6 sm:flex">
+          <span className="text-[7px] uppercase tracking-[0.18em] text-white/70">
+            Menu
+          </span>
+
+          <span className="text-[7px] uppercase tracking-[0.18em] text-white/70">
+            Our Story
+          </span>
+
+          <span className="rounded-full border border-white/25 px-3 py-1.5 text-[7px] uppercase tracking-[0.12em] text-white">
+            Reserve
+          </span>
+        </div>
+      </div>
+
+      {/* Tavern hero */}
+      <div className="absolute left-0 top-1/2 z-10 w-full -translate-y-1/2 px-7 sm:px-10 lg:px-14">
+        <p className="text-[7px] uppercase tracking-[0.24em] text-white/60 sm:text-[8px]">
+          Good Food · Great Vibes · Together
+        </p>
+
+        <h3 className="mt-3 max-w-[520px] font-serif text-4xl leading-[0.9] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
+          More Than a Meal,
+          <br />
+          <span className="italic text-white/75">It&apos;s a Tavern.</span>
+        </h3>
+
+        <p className="mt-5 max-w-[360px] text-[8px] leading-4 text-white/60 sm:text-[9px] sm:leading-5">
+          Fresh ingredients, bold flavors, and a welcoming atmosphere —
+          where every visit feels like home.
+        </p>
+
+        <div className="mt-5 flex items-center gap-4">
+          <span className="rounded-full bg-white px-4 py-2 text-[7px] font-medium uppercase tracking-[0.08em] text-black">
+            Explore menu
+          </span>
+
+          <span className="text-[7px] uppercase tracking-[0.1em] text-white/60">
+            Book a table
+          </span>
+        </div>
+      </div>
+
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/45 to-transparent" />
+    </div>
+  );
+}
+
+function GenericMockup({ variant }: { variant: Exclude<ProjectVariant, "tavern"> }) {
+  const styles = {
+    nexora: {
+      glow: "bg-blue-500/[0.10]",
+      accent: "bg-blue-500/[0.10]",
+    },
+    velora: {
+      glow: "bg-purple-500/[0.10]",
+      accent: "bg-purple-500/[0.10]",
+    },
+    lume: {
+      glow: "bg-indigo-500/[0.10]",
+      accent: "bg-indigo-500/[0.10]",
+    },
+  }[variant];
+
+  return (
+    <div className="relative h-full min-h-[220px] w-full overflow-hidden bg-[#0c0d11] sm:min-h-[270px]">
+      <div
+        aria-hidden="true"
+        className={`absolute left-1/2 top-1/2 h-52 w-52 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[70px] ${styles.glow}`}
+      />
+
+      <div className="absolute inset-x-[8%] top-[10%] overflow-hidden rounded-xl border border-white/[0.1] bg-[#11131a] shadow-2xl">
+        <BrowserBar />
+
+        <div className="p-4 sm:p-5">
+          <div className="h-2 w-16 rounded-full bg-white/10" />
+
+          <div className="mt-5 h-8 w-[65%] rounded-lg bg-white/[0.08]" />
+
+          <div className="mt-3 h-2 w-[50%] rounded-full bg-white/[0.045]" />
+
+          <div className="mt-7 grid grid-cols-3 gap-2">
+            <div className={`h-20 rounded-xl ${styles.accent}`} />
+            <div className="h-20 rounded-xl bg-white/[0.035]" />
+            <div className="h-20 rounded-xl bg-white/[0.025]" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ProjectMockup({ variant }: { variant: ProjectVariant }) {
+  if (variant === "tavern") {
+    return <TavernMockup />;
+  }
+
+  return <GenericMockup variant={variant} />;
+}
 
 export function ProjectsPage() {
   return (
@@ -9,8 +154,8 @@ export function ProjectsPage() {
       {/* =========================================================
           PROJECTS HERO
       ========================================================= */}
+
       <section className="relative overflow-hidden border-b border-white/[0.06]">
-        {/* Ambient glow */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -left-40 top-[-120px] h-[520px] w-[520px] rounded-full bg-blue-500/[0.07] blur-[150px]"
@@ -21,7 +166,6 @@ export function ProjectsPage() {
           className="pointer-events-none absolute right-[-160px] top-[-160px] h-[560px] w-[560px] rounded-full bg-purple-500/[0.07] blur-[160px]"
         />
 
-        {/* Grid */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 opacity-[0.025]"
@@ -34,7 +178,6 @@ export function ProjectsPage() {
 
         <div className="relative mx-auto max-w-[1440px] px-5 pb-20 pt-16 sm:px-8 sm:pb-24 sm:pt-24 lg:px-10 lg:pb-28 lg:pt-28">
           <div className="grid gap-14 lg:grid-cols-[1fr_0.62fr] lg:items-end lg:gap-20">
-            {/* Left */}
             <div>
               <div className="mb-7 flex items-center gap-3">
                 <span className="h-px w-8 bg-gradient-to-r from-blue-500 to-purple-500" />
@@ -54,8 +197,8 @@ export function ProjectsPage() {
 
               <p className="mt-8 max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">
                 A selection of digital experiences built from the ground up —
-                combining thoughtful interfaces, clean engineering and attention
-                to the details that matter.
+                combining thoughtful interfaces, clean engineering and
+                attention to the details that matter.
               </p>
 
               <div className="mt-9 flex flex-wrap items-center gap-5">
@@ -64,7 +207,7 @@ export function ProjectsPage() {
                   className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:opacity-90"
                 >
                   Explore projects
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0 group-hover:translate-x-1" />
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
 
                 <Link
@@ -77,7 +220,6 @@ export function ProjectsPage() {
               </div>
             </div>
 
-            {/* Right metadata panel */}
             <div className="relative mx-auto w-full max-w-[430px] lg:ml-auto">
               <div
                 aria-hidden="true"
@@ -85,7 +227,6 @@ export function ProjectsPage() {
               />
 
               <div className="relative overflow-hidden rounded-[1.75rem] border border-white/[0.09] bg-white/[0.025]">
-                {/* Top bar */}
                 <div className="flex items-center justify-between border-b border-white/[0.07] px-5 py-4">
                   <div className="flex items-center gap-2">
                     <span className="h-2 w-2 rounded-full bg-white/20" />
@@ -119,7 +260,10 @@ export function ProjectsPage() {
 
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-zinc-500">Full-stack</span>
+                      <span className="text-sm text-zinc-500">
+                        Full-stack
+                      </span>
+
                       <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-600">
                         01
                       </span>
@@ -127,6 +271,7 @@ export function ProjectsPage() {
 
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-zinc-500">Frontend</span>
+
                       <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-600">
                         02
                       </span>
@@ -136,6 +281,7 @@ export function ProjectsPage() {
                       <span className="text-sm text-zinc-500">
                         Product thinking
                       </span>
+
                       <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-600">
                         03
                       </span>
@@ -158,7 +304,6 @@ export function ProjectsPage() {
             </div>
           </div>
 
-          {/* Hero footer */}
           <div className="mt-10 flex items-center justify-between border-t border-white/[0.07] pt-5 sm:mt-12">
             <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-zinc-700">
               The Solo Syntax
@@ -174,6 +319,7 @@ export function ProjectsPage() {
       {/* =========================================================
           PROJECT LIST
       ========================================================= */}
+
       <section id="work" className="relative">
         <div className="mx-auto max-w-[1440px] px-5 pb-20 pt-14 sm:px-8 sm:pb-24 sm:pt-16 lg:px-10 lg:pb-28 lg:pt-20">
           <div className="mb-12 flex items-end justify-between gap-6">
@@ -224,33 +370,19 @@ export function ProjectsPage() {
                   />
 
                   <div
-                    className={`absolute left-1/2 top-1/2 w-[78%] -translate-x-1/2 -translate-y-[45%] overflow-hidden rounded-2xl border border-white/[0.1] bg-[#0c0d11] shadow-2xl shadow-black/40 transition-transform duration-700 group-hover:-translate-y-1/2 ${
+                    className={`absolute left-1/2 top-1/2 w-[86%] -translate-x-1/2 -translate-y-[45%] overflow-hidden rounded-2xl border border-white/[0.1] bg-[#0c0d11] shadow-2xl shadow-black/40 transition-transform duration-700 group-hover:-translate-y-1/2 ${
                       index === 0
-                        ? "max-w-[820px] rotate-[-2deg]"
+                        ? "max-w-[900px] rotate-[-2deg]"
                         : "max-w-[560px] rotate-[-3deg]"
                     }`}
                   >
-                    <div className="flex items-center gap-1.5 border-b border-white/[0.07] px-3 py-2.5">
-                      <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
-                      <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
-                      <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
+                    <BrowserBar />
 
-                      <div className="ml-3 h-4 flex-1 rounded-full bg-white/[0.035]" />
-                    </div>
-
-                    <div className="p-5 sm:p-7">
-                      <div className="h-2 w-16 rounded-full bg-white/10" />
-
-                      <div className="mt-5 h-7 w-[65%] rounded-md bg-white/[0.08]" />
-
-                      <div className="mt-3 h-2 w-[48%] rounded-full bg-white/[0.045]" />
-
-                      <div className="mt-8 grid grid-cols-3 gap-2">
-                        <div className="h-20 rounded-xl border border-white/[0.06] bg-white/[0.025]" />
-                        <div className="h-20 rounded-xl border border-white/[0.06] bg-white/[0.025]" />
-                        <div className="h-20 rounded-xl border border-white/[0.06] bg-white/[0.025]" />
-                      </div>
-                    </div>
+                    <ProjectMockup
+                      variant={
+                        project.variant as ProjectVariant
+                      }
+                    />
                   </div>
 
                   <span className="absolute bottom-5 left-5 font-mono text-[10px] tracking-[0.16em] text-zinc-600">
@@ -281,10 +413,10 @@ export function ProjectsPage() {
             ))}
           </div>
 
-          {/* Bottom CTA */}
           {/* =========================================================
-    BOTTOM CTA
-========================================================= */}
+              BOTTOM CTA
+          ========================================================= */}
+
           <section className="relative mt-20 sm:mt-24">
             <div className="relative overflow-hidden rounded-[2rem] border border-white/[0.09] bg-white/[0.025] px-6 py-12 sm:px-10 sm:py-14 lg:px-14">
               <div
@@ -294,7 +426,7 @@ export function ProjectsPage() {
 
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute left-[-180px] bottom-[-220px] h-[360px] w-[360px] rounded-full bg-blue-500/[0.05] blur-[120px]"
+                className="pointer-events-none absolute bottom-[-220px] left-[-180px] h-[360px] w-[360px] rounded-full bg-blue-500/[0.05] blur-[120px]"
               />
 
               <div className="relative flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
@@ -317,6 +449,7 @@ export function ProjectsPage() {
                   className="group inline-flex w-fit shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:opacity-90"
                 >
                   Start a conversation
+
                   <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </Link>
               </div>
@@ -326,6 +459,7 @@ export function ProjectsPage() {
                 className="group relative mt-8 inline-flex items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white"
               >
                 Or learn more about me
+
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
             </div>

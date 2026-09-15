@@ -30,6 +30,7 @@ export const projects = [
       "A full-stack digital experience built with a focus on modern interfaces, reliable functionality and a polished user experience.",
     variant: "tavern",
     href: "/projects/tavern",
+    liveUrl: "https://tavern-virid.vercel.app/",
   },
   {
     name: "Nexora",
