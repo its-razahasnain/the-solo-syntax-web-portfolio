@@ -5,7 +5,8 @@ type Project = {
   name: string;
   category: string;
   description: string;
-  variant: "nexora" | "velora" | "lume";
+  variant: "tavern" | "nexora" | "velora" | "lume";
+  href?: string;
 };
 
 type ProjectCardProps = {

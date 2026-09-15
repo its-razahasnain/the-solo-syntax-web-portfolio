@@ -24,11 +24,20 @@ export const siteConfig = {
 
 export const projects = [
   {
+    name: "Tavern",
+    category: "Full-Stack Web Application",
+    description:
+      "A full-stack digital experience built with a focus on modern interfaces, reliable functionality and a polished user experience.",
+    variant: "tavern",
+    href: "/projects/tavern",
+  },
+  {
     name: "Nexora",
     category: "Business Website",
     description:
       "A modern digital experience built for a forward-thinking brand.",
     variant: "nexora",
+    href: "/projects/nexora",
   },
   {
     name: "Velora",
@@ -36,6 +45,7 @@ export const projects = [
     description:
       "A clean SaaS experience focused on clarity, conversion and usability.",
     variant: "velora",
+    href: "/projects/velora",
   },
   {
     name: "Lume",
@@ -43,6 +53,7 @@ export const projects = [
     description:
       "An immersive portfolio experience designed around visual storytelling.",
     variant: "lume",
+    href: "/projects/lume",
   },
 ] as const;
 

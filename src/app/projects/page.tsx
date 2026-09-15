@@ -1,20 +1,25 @@
-export default function ProjectsPage() {
+import type { Metadata } from "next";
+
+import { Footer } from "@/components/layout/footer";
+import { Navbar } from "@/components/navigation/navbar";
+import { ProjectsPage } from "@/components/sections/projects-page";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Explore selected projects by The Solo Syntax — modern websites and digital products built with thoughtful design and clean engineering.",
+};
+
+export default function ProjectsRoute() {
   return (
-    <main className="min-h-screen bg-[#050505] px-5 py-24 text-white">
-      <div className="mx-auto max-w-6xl">
-        <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
-          Projects
-        </p>
+    <>
+      <Navbar />
 
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-6xl">
-          All Projects
-        </h1>
+      <main>
+        <ProjectsPage />
+      </main>
 
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
-          A complete collection of projects, experiments and digital
-          experiences built by The Solo Syntax.
-        </p>
-      </div>
-    </main>
+      <Footer />
+    </>
   );
 }
