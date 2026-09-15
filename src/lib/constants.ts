@@ -1,46 +1,24 @@
 export const siteConfig = {
   name: "The Solo Syntax",
+
+  url: "https://the-solo-syntax.vercel.app",
+
   description:
     "Modern websites built with clean code, thoughtful design and real performance.",
+
   navigation: [
-    {
-      label: "Home",
-      href: "#home",
-    },
-    {
-      label: "Projects",
-      href: "#projects",
-    },
-    {
-      label: "About",
-      href: "#about",
-    },
-    {
-      label: "Skills",
-      href: "#skills",
-    },
-    {
-      label: "Contact",
-      href: "#contact",
-    },
+    { label: "Home", href: "#home" },
+    { label: "Projects", href: "#projects" },
+    { label: "About", href: "#about" },
+    { label: "Skills", href: "#skills" },
+    { label: "Contact", href: "#contact" },
   ],
+
   socialLinks: [
-    {
-      label: "GitHub",
-      href: "https://github.com",
-    },
-    {
-      label: "LinkedIn",
-      href: "https://linkedin.com",
-    },
-    {
-      label: "X",
-      href: "https://x.com",
-    },
-    {
-      label: "Instagram",
-      href: "https://instagram.com",
-    },
+    { label: "GitHub", href: "https://github.com" },
+    { label: "LinkedIn", href: "https://linkedin.com" },
+    { label: "X", href: "https://x.com" },
+    { label: "Instagram", href: "https://instagram.com" },
   ],
 } as const;
 
