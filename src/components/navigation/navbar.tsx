@@ -24,7 +24,7 @@ export function Navbar() {
         >
           {/* Brand */}
           <Link
-            href="#home"
+            href="/"
             onClick={closeMenu}
             className="group flex items-center gap-3"
             aria-label="The Solo Syntax home"
@@ -40,6 +40,7 @@ export function Navbar() {
                 className="h-9 w-9 object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </div>
+
             {/* Brand name */}
             <span className="relative text-[17px] font-semibold tracking-[-0.035em] text-white transition-opacity duration-200 group-hover:opacity-80 sm:text-[18px]">
               The Solo{" "}
@@ -62,11 +63,10 @@ export function Navbar() {
               ))}
 
             <Link
-              href="#contact"
+              href="/contact"
               className="group inline-flex h-11 items-center gap-2 rounded-full border border-white/[0.14] bg-white/[0.025] px-5 text-sm font-medium text-white transition-all duration-200 hover:border-white/[0.25] hover:bg-white/[0.07]"
             >
               Let&apos;s talk
-
               <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
           </div>
@@ -111,12 +111,11 @@ export function Navbar() {
               ))}
 
               <Link
-                href="#contact"
+                href="/contact"
                 onClick={closeMenu}
                 className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-medium text-white transition-all duration-200 hover:border-white/20 hover:bg-white/[0.08]"
               >
                 Let&apos;s talk
-
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
