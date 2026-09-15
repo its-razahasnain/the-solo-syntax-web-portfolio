@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Tavern — The Solo Syntax",
     description:
       "A concept restaurant website created by The Solo Syntax.",
+    type: "website",
   },
 };
 
