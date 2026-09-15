@@ -1,11 +1,6 @@
-import {
-  Code2,
-  Layers3,
-  PenTool,
-  Users,
-  ArrowUpRight,
-} from "lucide-react";
+import { Code2, Layers3, PenTool, Users, ArrowUpRight } from "lucide-react";
 import { capabilities } from "@/lib/constants";
+import Link from "next/link";
 
 const icons = {
   code: Code2,
@@ -50,13 +45,23 @@ export function About() {
             </p>
           </div>
 
-          <a
-            href="#contact"
-            className="group mt-8 inline-flex items-center gap-2 text-sm font-medium text-white transition-colors duration-200 hover:text-zinc-300"
-          >
-            Let&apos;s work together
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </a>
+          <div className="mt-8 flex flex-wrap items-center gap-5">
+            <Link
+              href="/about"
+              className="group inline-flex items-center gap-2 text-sm font-medium text-white transition-colors duration-200 hover:text-zinc-300"
+            >
+              More about me
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </Link>
+
+            <Link
+              href="/contact"
+              className="group inline-flex items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white"
+            >
+              Let&apos;s work together
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </Link>
+          </div>
         </div>
 
         {/* Right */}

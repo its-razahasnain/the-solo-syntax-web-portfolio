@@ -1,20 +1,25 @@
-export default function AboutPage() {
+import type { Metadata } from "next";
+
+import { Footer } from "@/components/layout/footer";
+import { Navbar } from "@/components/navigation/navbar";
+import { AboutPage } from "@/components/sections/about-page";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Learn more about The Solo Syntax and the approach behind building modern, performant digital experiences.",
+};
+
+export default function AboutPageRoute() {
   return (
-    <main className="min-h-screen bg-[#050505] px-5 py-24 text-white">
-      <div className="mx-auto max-w-6xl">
-        <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
-          About
-        </p>
+    <>
+      <Navbar />
 
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-6xl">
-          About The Solo Syntax
-        </h1>
+      <main>
+        <AboutPage />
+      </main>
 
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
-          Learn more about the developer, the approach and the ideas behind
-          The Solo Syntax.
-        </p>
-      </div>
-    </main>
+      <Footer />
+    </>
   );
 }

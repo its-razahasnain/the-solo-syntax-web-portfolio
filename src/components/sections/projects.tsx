@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
@@ -19,13 +20,23 @@ export function Projects() {
             </h2>
           </div>
 
-          <a
-            href="#contact"
-            className="group inline-flex w-fit items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white"
-          >
-            Start a project
-            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-          </a>
+          <div className="flex flex-wrap items-center gap-5">
+            <Link
+              href="/projects"
+              className="group inline-flex w-fit items-center gap-2 text-sm font-medium text-white transition-colors duration-200 hover:text-zinc-300"
+            >
+              View all projects
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+            </Link>
+
+            <Link
+              href="/contact"
+              className="group inline-flex w-fit items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white"
+            >
+              Start a project
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
