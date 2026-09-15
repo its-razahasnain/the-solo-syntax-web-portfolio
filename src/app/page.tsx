@@ -3,19 +3,21 @@ import { Navbar } from "@/components/navigation/navbar";
 import { About } from "@/components/sections/about";
 import { Hero } from "@/components/sections/hero";
 import { Projects } from "@/components/sections/projects";
+import { Contact } from "@/components/sections/contact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#07090a]">
+    <>
+      <div className="page-glow" aria-hidden="true" />
+
       <Navbar />
-
-      <Hero />
-
-      <Projects />
-
-      <About />
-
+      <main>
+        <Hero />
+        <Projects />
+        <About />
+        <Contact />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
