@@ -118,21 +118,25 @@ export default function SkillsPage() {
       <Navbar />
 
       <main>
-        {/* Hero */}
+        {/* =========================================================
+            HERO
+        ========================================================= */}
         <section className="relative isolate overflow-hidden border-b border-white/[0.06]">
+          {/* Ambient glow */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-[-260px] h-[560px] w-[760px] -translate-x-1/2 rounded-full bg-blue-500/[0.08] blur-[140px]"
+            className="pointer-events-none absolute left-1/2 top-[-180px] h-[380px] w-[520px] -translate-x-1/2 rounded-full bg-blue-500/[0.07] blur-[110px] sm:top-[-260px] sm:h-[560px] sm:w-[760px] sm:bg-blue-500/[0.08] sm:blur-[140px]"
           />
 
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute right-[-180px] top-[120px] h-[420px] w-[420px] rounded-full bg-purple-500/[0.06] blur-[130px]"
+            className="pointer-events-none absolute -right-32 top-20 h-[280px] w-[280px] rounded-full bg-purple-500/[0.05] blur-[100px] sm:right-[-180px] sm:top-[120px] sm:h-[420px] sm:w-[420px] sm:bg-purple-500/[0.06] sm:blur-[130px]"
           />
 
+          {/* Grid */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 opacity-[0.035]"
+            className="pointer-events-none absolute inset-0 opacity-[0.025] sm:opacity-[0.035]"
             style={{
               backgroundImage:
                 "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
@@ -141,16 +145,18 @@ export default function SkillsPage() {
           />
 
           <Container>
-            <div className="relative grid min-h-[600px] items-end gap-14 pb-14 pt-28 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20 lg:pb-16 lg:pt-32">
-              <div>
-                <div className="mb-7 flex items-center gap-3">
-                  <span className="h-px w-10 bg-gradient-to-r from-blue-400 to-purple-500" />
-                  <span className="text-xs font-medium uppercase tracking-[0.22em] text-zinc-500">
+            <div className="relative grid gap-10 pb-12 pt-20 sm:gap-14 sm:pb-14 sm:pt-28 lg:grid-cols-[1.2fr_0.8fr] lg:items-end lg:gap-20 lg:pb-16 lg:pt-32">
+              {/* Hero content */}
+              <div className="min-w-0">
+                <div className="mb-6 flex items-center gap-3 sm:mb-7">
+                  <span className="h-px w-8 shrink-0 bg-gradient-to-r from-blue-400 to-purple-500 sm:w-10" />
+
+                  <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-zinc-500 sm:text-xs sm:tracking-[0.22em]">
                     What I work with
                   </span>
                 </div>
 
-                <h1 className="max-w-4xl text-[clamp(3.5rem,7vw,7rem)] font-semibold leading-[0.88] tracking-[-0.07em] text-white">
+                <h1 className="max-w-4xl text-[clamp(3rem,11vw,7rem)] font-semibold leading-[0.9] tracking-[-0.065em] text-white sm:text-[clamp(3.5rem,7vw,7rem)] sm:leading-[0.88] sm:tracking-[-0.07em]">
                   Built with
                   <br />
                   <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">
@@ -158,71 +164,81 @@ export default function SkillsPage() {
                   </span>
                 </h1>
 
-                <p className="mt-8 max-w-2xl text-base leading-7 text-zinc-400 sm:text-lg sm:leading-8">
+                <p className="mt-7 max-w-2xl text-[15px] leading-7 text-zinc-400 sm:mt-8 sm:text-lg sm:leading-8">
                   The tools are important. But knowing how to combine them into
                   a thoughtful, reliable and useful product matters more.
                 </p>
 
-                <div className="mt-9 flex flex-wrap items-center gap-5">
+                <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-4 sm:mt-9">
                   <Link
                     href="/contact"
-                    className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:opacity-90"
+                    className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:opacity-90 sm:px-6 sm:py-3.5"
                   >
                     Let&apos;s build something
-                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                   </Link>
 
                   <Link
                     href="/projects"
-                    className="group inline-flex items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white"
+                    className="group inline-flex min-h-11 items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white"
                   >
                     See my work
-                    <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                    <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>
 
-              <div className="relative lg:pb-1">
-                <div className="rounded-[1.75rem] border border-white/[0.08] bg-white/[0.025] p-6 backdrop-blur-sm sm:p-7">
-                  <div className="flex items-center justify-between border-b border-white/[0.07] pb-5">
-                    <span className="font-mono text-xs text-zinc-500">
+              {/* Skills index card */}
+              <div className="relative min-w-0 lg:pb-1">
+                <div className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.025] p-5 backdrop-blur-sm sm:rounded-[1.75rem] sm:p-7">
+                  <div className="flex items-center justify-between gap-4 border-b border-white/[0.07] pb-4 sm:pb-5">
+                    <span className="font-mono text-[11px] text-zinc-500 sm:text-xs">
                       skills.index
                     </span>
-                    <span className="text-xs text-zinc-600">2026</span>
+
+                    <span className="shrink-0 text-[11px] text-zinc-600 sm:text-xs">
+                      2026
+                    </span>
                   </div>
 
-                  <div className="space-y-5 pt-6">
+                  <div className="space-y-5 pt-5 sm:pt-6">
                     <div>
-                      <p className="text-xs uppercase tracking-[0.16em] text-zinc-600">
+                      <p className="text-[10px] uppercase tracking-[0.16em] text-zinc-600 sm:text-xs">
                         Focus
                       </p>
-                      <p className="mt-2 text-sm text-zinc-300">
+
+                      <p className="mt-2 text-sm leading-6 text-zinc-300">
                         Full-stack web development
                       </p>
                     </div>
 
                     <div>
-                      <p className="text-xs uppercase tracking-[0.16em] text-zinc-600">
+                      <p className="text-[10px] uppercase tracking-[0.16em] text-zinc-600 sm:text-xs">
                         Core
                       </p>
-                      <p className="mt-2 text-sm text-zinc-300">
+
+                      <p className="mt-2 text-sm leading-6 text-zinc-300">
                         React · Next.js · TypeScript
                       </p>
                     </div>
 
                     <div>
-                      <p className="text-xs uppercase tracking-[0.16em] text-zinc-600">
+                      <p className="text-[10px] uppercase tracking-[0.16em] text-zinc-600 sm:text-xs">
                         Approach
                       </p>
+
                       <p className="mt-2 text-sm leading-6 text-zinc-400">
                         Design · Code · Performance
                       </p>
                     </div>
                   </div>
 
-                  <div className="mt-7 flex items-center justify-between border-t border-white/[0.07] pt-5">
-                    <span className="text-xs text-zinc-600">The Solo Syntax</span>
-                    <span className="h-2 w-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500" />
+                  <div className="mt-6 flex items-center justify-between gap-4 border-t border-white/[0.07] pt-4 sm:mt-7 sm:pt-5">
+                    <span className="truncate text-[11px] text-zinc-600 sm:text-xs">
+                      The Solo Syntax
+                    </span>
+
+                    <span className="h-2 w-2 shrink-0 rounded-full bg-gradient-to-r from-blue-400 to-purple-500" />
                   </div>
                 </div>
               </div>
@@ -230,12 +246,14 @@ export default function SkillsPage() {
           </Container>
         </section>
 
-        {/* Core skills */}
-        <section className="relative py-20 sm:py-24 lg:py-28">
+        {/* =========================================================
+            CORE SKILLS
+        ========================================================= */}
+        <section className="relative py-16 sm:py-24 lg:py-28">
           <Container>
-            <div className="mb-12 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div className="mb-9 flex flex-col justify-between gap-5 sm:mb-12 sm:flex-row sm:items-end">
               <div>
-                <p className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-500">
+                <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-500 sm:text-xs sm:tracking-[0.18em]">
                   Core capabilities
                 </p>
 
@@ -250,32 +268,32 @@ export default function SkillsPage() {
               </p>
             </div>
 
-            <div className="grid gap-5 lg:grid-cols-2">
+            <div className="grid gap-4 lg:grid-cols-2 lg:gap-5">
               {skillGroups.map((skill) => {
                 const Icon = skill.icon;
 
                 return (
                   <article
                     key={skill.number}
-                    className="group relative overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-white/[0.025] p-6 transition-all duration-500 hover:-translate-y-1 hover:border-white/[0.14] hover:bg-white/[0.04] sm:p-8"
+                    className="group relative min-w-0 overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-white/[0.025] p-5 transition-all duration-500 hover:-translate-y-1 hover:border-white/[0.14] hover:bg-white/[0.04] sm:rounded-[1.75rem] sm:p-8"
                   >
                     <div
                       aria-hidden="true"
-                      className="pointer-events-none absolute right-[-100px] top-[-120px] h-[260px] w-[260px] rounded-full bg-blue-500/[0.045] blur-[90px] transition-opacity duration-500 group-hover:opacity-100"
+                      className="pointer-events-none absolute -right-24 -top-28 h-[220px] w-[220px] rounded-full bg-blue-500/[0.04] blur-[80px] transition-opacity duration-500 group-hover:opacity-100 sm:-right-24 sm:-top-28 sm:h-[260px] sm:w-[260px] sm:blur-[90px]"
                     />
 
-                    <div className="relative">
-                      <div className="flex items-start justify-between gap-6">
-                        <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.035] text-zinc-300">
+                    <div className="relative min-w-0">
+                      <div className="flex items-start justify-between gap-5">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.035] text-zinc-300 sm:h-11 sm:w-11">
                           <Icon className="h-5 w-5" />
                         </div>
 
-                        <span className="font-mono text-xs text-zinc-600">
+                        <span className="font-mono text-[11px] text-zinc-600 sm:text-xs">
                           {skill.number}
                         </span>
                       </div>
 
-                      <h3 className="mt-7 text-2xl font-semibold tracking-[-0.035em] text-white">
+                      <h3 className="mt-6 break-words text-xl font-semibold tracking-[-0.035em] text-white sm:mt-7 sm:text-2xl">
                         {skill.title}
                       </h3>
 
@@ -283,11 +301,11 @@ export default function SkillsPage() {
                         {skill.description}
                       </p>
 
-                      <div className="mt-7 flex flex-wrap gap-2">
+                      <div className="mt-6 flex flex-wrap gap-2 sm:mt-7">
                         {skill.technologies.map((technology) => (
                           <span
                             key={technology}
-                            className="rounded-full border border-white/[0.07] bg-white/[0.025] px-3 py-1.5 text-xs text-zinc-400"
+                            className="max-w-full rounded-full border border-white/[0.07] bg-white/[0.025] px-3 py-1.5 text-[11px] leading-4 text-zinc-400 sm:text-xs"
                           >
                             {technology}
                           </span>
@@ -301,16 +319,18 @@ export default function SkillsPage() {
           </Container>
         </section>
 
-        {/* Tools */}
-        <section className="border-y border-white/[0.06] bg-white/[0.012] py-20 sm:py-24">
+        {/* =========================================================
+            TOOLS
+        ========================================================= */}
+        <section className="border-y border-white/[0.06] bg-white/[0.012] py-16 sm:py-24">
           <Container>
-            <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+            <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
               <div>
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.035] text-zinc-300">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.035] text-zinc-300 sm:h-11 sm:w-11">
                   <Wrench className="h-5 w-5" />
                 </div>
 
-                <p className="mt-6 text-xs font-medium uppercase tracking-[0.18em] text-zinc-500">
+                <p className="mt-5 text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-500 sm:mt-6 sm:text-xs sm:tracking-[0.18em]">
                   Tools & technologies
                 </p>
 
@@ -328,7 +348,7 @@ export default function SkillsPage() {
                 {tools.map((tool) => (
                   <div
                     key={tool}
-                    className="flex min-h-28 items-center justify-center bg-[#090b10] px-4 text-center text-sm font-medium text-zinc-300 transition-colors duration-300 hover:bg-white/[0.04] hover:text-white"
+                    className="flex min-h-24 items-center justify-center bg-[#090b10] px-3 py-5 text-center text-xs font-medium text-zinc-300 transition-colors duration-300 hover:bg-white/[0.04] hover:text-white sm:min-h-28 sm:px-4 sm:text-sm"
                   >
                     {tool}
                   </div>
@@ -338,11 +358,13 @@ export default function SkillsPage() {
           </Container>
         </section>
 
-        {/* Approach */}
-        <section className="py-20 sm:py-24 lg:py-28">
+        {/* =========================================================
+            APPROACH
+        ========================================================= */}
+        <section className="py-16 sm:py-24 lg:py-28">
           <Container>
-            <div className="mb-12">
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-500">
+            <div className="mb-9 sm:mb-12">
+              <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-500 sm:text-xs sm:tracking-[0.18em]">
                 How I work
               </p>
 
@@ -352,16 +374,20 @@ export default function SkillsPage() {
             </div>
 
             <div className="grid gap-0 border-y border-white/[0.07] lg:grid-cols-3 lg:divide-x lg:divide-white/[0.07]">
-              {approach.map((item) => (
+              {approach.map((item, index) => (
                 <div
                   key={item.number}
-                  className="border-b border-white/[0.07] py-8 lg:border-b-0 lg:px-8 lg:first:pl-0 lg:last:pr-0"
+                  className={`py-7 sm:py-8 lg:px-8 lg:py-10 ${
+                    index !== approach.length - 1
+                      ? "border-b border-white/[0.07] lg:border-b-0"
+                      : ""
+                  } lg:first:pl-0 lg:last:pr-0`}
                 >
-                  <span className="font-mono text-xs text-zinc-600">
+                  <span className="font-mono text-[11px] text-zinc-600 sm:text-xs">
                     {item.number}
                   </span>
 
-                  <h3 className="mt-5 text-xl font-semibold tracking-[-0.025em] text-white">
+                  <h3 className="mt-4 text-xl font-semibold tracking-[-0.025em] text-white sm:mt-5">
                     {item.title}
                   </h3>
 
@@ -374,23 +400,25 @@ export default function SkillsPage() {
           </Container>
         </section>
 
-        {/* CTA */}
-        <section className="relative pb-20 sm:pb-24 lg:pb-28">
+        {/* =========================================================
+            CTA
+        ========================================================= */}
+        <section className="relative pb-16 sm:pb-24 lg:pb-28">
           <Container>
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/[0.09] bg-white/[0.025] px-6 py-12 sm:px-10 sm:py-14 lg:px-14">
+            <div className="relative overflow-hidden rounded-[1.5rem] border border-white/[0.09] bg-white/[0.025] px-5 py-10 sm:rounded-[2rem] sm:px-10 sm:py-14 lg:px-14">
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute right-[-120px] top-[-180px] h-[400px] w-[400px] rounded-full bg-purple-500/[0.08] blur-[120px]"
+                className="pointer-events-none absolute -right-32 -top-32 h-[300px] w-[300px] rounded-full bg-purple-500/[0.07] blur-[100px] sm:right-[-120px] sm:top-[-180px] sm:h-[400px] sm:w-[400px] sm:bg-purple-500/[0.08] sm:blur-[120px]"
               />
 
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute bottom-[-220px] left-[-180px] h-[360px] w-[360px] rounded-full bg-blue-500/[0.05] blur-[120px]"
+                className="pointer-events-none absolute -bottom-40 -left-32 h-[280px] w-[280px] rounded-full bg-blue-500/[0.04] blur-[100px] sm:bottom-[-220px] sm:left-[-180px] sm:h-[360px] sm:w-[360px] sm:bg-blue-500/[0.05] sm:blur-[120px]"
               />
 
-              <div className="relative flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
-                <div>
-                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-500">
+              <div className="relative flex flex-col justify-between gap-8 sm:gap-10 lg:flex-row lg:items-end">
+                <div className="min-w-0">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-500 sm:text-xs sm:tracking-[0.18em]">
                     Let&apos;s build
                   </p>
 
@@ -405,19 +433,19 @@ export default function SkillsPage() {
 
                 <Link
                   href="/contact"
-                  className="group inline-flex w-fit shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:opacity-90"
+                  className="group inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:opacity-90 sm:w-fit"
                 >
                   Start a conversation
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <ArrowUpRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </Link>
               </div>
 
               <Link
                 href="/projects"
-                className="group relative mt-8 inline-flex items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white"
+                className="group relative mt-7 inline-flex min-h-10 items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white sm:mt-8"
               >
                 Or explore my projects
-                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
             </div>
           </Container>
