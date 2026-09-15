@@ -13,6 +13,7 @@ const projectTypes = [
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [status, setStatus] = useState<{
     type: "success" | "error" | null;
     message: string;
@@ -25,6 +26,7 @@ export function ContactForm() {
     event.preventDefault();
 
     setIsSubmitting(true);
+
     setStatus({
       type: null,
       message: "",
@@ -81,10 +83,10 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-[1.75rem] border border-white/[0.08] bg-white/[0.025] p-6 sm:p-8"
+      className="min-w-0 rounded-[1.5rem] border border-white/[0.08] bg-white/[0.025] p-5 sm:rounded-[1.75rem] sm:p-8"
     >
-      <div className="grid gap-6 sm:grid-cols-2">
-        <div>
+      <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
+        <div className="min-w-0">
           <label
             htmlFor="name"
             className="mb-2.5 block text-sm font-medium text-zinc-300"
@@ -100,11 +102,11 @@ export function ContactForm() {
             required
             maxLength={100}
             placeholder="John Doe"
-            className="h-12 w-full rounded-xl border border-white/[0.08] bg-black/20 px-4 text-sm text-white outline-none placeholder:text-zinc-700 transition-colors focus:border-indigo-400/50 focus:bg-white/[0.035]"
+            className="h-12 w-full min-w-0 rounded-xl border border-white/[0.08] bg-black/20 px-4 text-sm text-white outline-none placeholder:text-zinc-700 transition-colors focus:border-indigo-400/50 focus:bg-white/[0.035]"
           />
         </div>
 
-        <div>
+        <div className="min-w-0">
           <label
             htmlFor="email"
             className="mb-2.5 block text-sm font-medium text-zinc-300"
@@ -120,12 +122,12 @@ export function ContactForm() {
             required
             maxLength={254}
             placeholder="john@example.com"
-            className="h-12 w-full rounded-xl border border-white/[0.08] bg-black/20 px-4 text-sm text-white outline-none placeholder:text-zinc-700 transition-colors focus:border-indigo-400/50 focus:bg-white/[0.035]"
+            className="h-12 w-full min-w-0 rounded-xl border border-white/[0.08] bg-black/20 px-4 text-sm text-white outline-none placeholder:text-zinc-700 transition-colors focus:border-indigo-400/50 focus:bg-white/[0.035]"
           />
         </div>
       </div>
 
-      <div className="mt-6">
+      <div className="mt-5 sm:mt-6">
         <label
           htmlFor="projectType"
           className="mb-2.5 block text-sm font-medium text-zinc-300"
@@ -138,7 +140,7 @@ export function ContactForm() {
           name="projectType"
           defaultValue=""
           required
-          className="h-12 w-full appearance-none rounded-xl border border-white/[0.08] bg-black/20 px-4 text-sm text-zinc-300 outline-none transition-colors focus:border-indigo-400/50 focus:bg-white/[0.035]"
+          className="h-12 w-full min-w-0 rounded-xl border border-white/[0.08] bg-black/20 px-4 text-sm text-zinc-300 outline-none transition-colors focus:border-indigo-400/50 focus:bg-white/[0.035]"
         >
           <option value="" disabled>
             Select a project type
@@ -152,7 +154,7 @@ export function ContactForm() {
         </select>
       </div>
 
-      <div className="mt-6">
+      <div className="mt-5 sm:mt-6">
         <label
           htmlFor="budget"
           className="mb-2.5 block text-sm font-medium text-zinc-300"
@@ -169,11 +171,11 @@ export function ContactForm() {
           type="text"
           maxLength={100}
           placeholder="e.g. $1,000 – $3,000"
-          className="h-12 w-full rounded-xl border border-white/[0.08] bg-black/20 px-4 text-sm text-white outline-none placeholder:text-zinc-700 transition-colors focus:border-indigo-400/50 focus:bg-white/[0.035]"
+          className="h-12 w-full min-w-0 rounded-xl border border-white/[0.08] bg-black/20 px-4 text-sm text-white outline-none placeholder:text-zinc-700 transition-colors focus:border-indigo-400/50 focus:bg-white/[0.035]"
         />
       </div>
 
-      <div className="mt-6">
+      <div className="mt-5 sm:mt-6">
         <label
           htmlFor="message"
           className="mb-2.5 block text-sm font-medium text-zinc-300"
@@ -188,7 +190,7 @@ export function ContactForm() {
           maxLength={5000}
           rows={7}
           placeholder="What are you building? What should it accomplish?"
-          className="w-full resize-none rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3.5 text-sm leading-6 text-white outline-none placeholder:text-zinc-700 transition-colors focus:border-indigo-400/50 focus:bg-white/[0.035]"
+          className="min-h-[168px] w-full min-w-0 resize-none rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3.5 text-sm leading-6 text-white outline-none placeholder:text-zinc-700 transition-colors focus:border-indigo-400/50 focus:bg-white/[0.035]"
         />
       </div>
 
@@ -211,7 +213,7 @@ export function ContactForm() {
       {status.type && (
         <div
           role={status.type === "success" ? "status" : "alert"}
-          className={`mt-6 flex items-start gap-3 rounded-xl border px-4 py-3.5 text-sm ${
+          className={`mt-5 flex items-start gap-3 rounded-xl border px-4 py-3.5 text-sm sm:mt-6 ${
             status.type === "success"
               ? "border-emerald-400/15 bg-emerald-400/[0.05] text-emerald-300"
               : "border-red-400/15 bg-red-400/[0.05] text-red-300"
@@ -221,11 +223,11 @@ export function ContactForm() {
             <Check className="mt-0.5 h-4 w-4 shrink-0" />
           )}
 
-          <span>{status.message}</span>
+          <span className="min-w-0">{status.message}</span>
         </div>
       )}
 
-      <div className="mt-7 flex flex-col gap-4 border-t border-white/[0.07] pt-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-6 flex flex-col gap-5 border-t border-white/[0.07] pt-5 sm:mt-7 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:pt-6">
         <p className="max-w-sm text-xs leading-5 text-zinc-600">
           By sending this inquiry, you&apos;re simply starting a conversation.
           No commitment required.
@@ -234,7 +236,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="group inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+          className="group inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
         >
           {isSubmitting ? (
             <>

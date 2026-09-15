@@ -41,22 +41,22 @@ export default function ContactPage() {
         <section className="relative overflow-hidden border-b border-white/[0.06]">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute left-[-180px] top-[-220px] h-[500px] w-[500px] rounded-full bg-blue-500/[0.08] blur-[140px]"
+            className="pointer-events-none absolute left-[-180px] top-[-220px] h-[500px] w-[500px] rounded-full bg-blue-500/[0.08] blur-[140px] sm:left-[-140px] sm:top-[-180px]"
           />
 
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute right-[-180px] top-[80px] h-[450px] w-[450px] rounded-full bg-purple-500/[0.07] blur-[140px]"
+            className="pointer-events-none absolute right-[-180px] top-[80px] h-[450px] w-[450px] rounded-full bg-purple-500/[0.07] blur-[140px] sm:right-[-140px]"
           />
 
           <Container>
-            <div className="grid gap-14 py-20 sm:py-28 lg:grid-cols-[1fr_0.42fr] lg:gap-20 lg:py-32">
-              <div>
+            <div className="grid gap-10 py-16 sm:gap-14 sm:py-24 lg:grid-cols-[1fr_0.42fr] lg:gap-20 lg:py-32">
+              <div className="min-w-0">
                 <p className="mb-5 text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
                   Let&apos;s connect
                 </p>
 
-                <h1 className="max-w-4xl text-[clamp(3.2rem,7vw,6.5rem)] font-semibold leading-[0.9] tracking-[-0.065em] text-white">
+                <h1 className="max-w-4xl text-[clamp(3rem,12vw,6.5rem)] font-semibold leading-[0.9] tracking-[-0.065em] text-white sm:text-[clamp(3.2rem,7vw,6.5rem)]">
                   Let&apos;s build
                   <br />
                   <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">
@@ -64,14 +64,14 @@ export default function ContactPage() {
                   </span>
                 </h1>
 
-                <p className="mt-7 max-w-xl text-base leading-7 text-zinc-400 sm:text-lg">
+                <p className="mt-6 max-w-xl text-[15px] leading-7 text-zinc-400 sm:mt-7 sm:text-lg">
                   Have an idea, a product or a website that needs to come to
                   life? Tell me what you&apos;re thinking and let&apos;s turn
                   it into something meaningful.
                 </p>
               </div>
 
-              <div className="lg:pt-2">
+              <div className="min-w-0 lg:pt-2">
                 <div className="border-t border-white/[0.07] pt-5">
                   <p className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-600">
                     contact.index
@@ -104,18 +104,18 @@ export default function ContactPage() {
                 </div>
 
                 {/* Social Links */}
-                <div className="mt-10 border-t border-white/[0.07] pt-5">
+                <div className="mt-8 border-t border-white/[0.07] pt-5 sm:mt-10">
                   <p className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-600">
                     Social
                   </p>
 
-                  <div className="mt-4 flex items-center gap-4">
+                  <div className="mt-4 flex items-center gap-2">
                     <a
                       href={githubLink?.href}
                       target="_blank"
                       rel="noreferrer"
                       aria-label="GitHub"
-                      className="text-zinc-500 transition-colors hover:text-white"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full text-zinc-500 transition-colors hover:bg-white/[0.04] hover:text-white"
                     >
                       <Code2 className="h-5 w-5" />
                     </a>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                       target="_blank"
                       rel="noreferrer"
                       aria-label="LinkedIn"
-                      className="text-zinc-500 transition-colors hover:text-white"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full text-zinc-500 transition-colors hover:bg-white/[0.04] hover:text-white"
                     >
                       <BriefcaseBusiness className="h-5 w-5" />
                     </a>
@@ -135,7 +135,7 @@ export default function ContactPage() {
                       target="_blank"
                       rel="noreferrer"
                       aria-label="X"
-                      className="text-zinc-500 transition-colors hover:text-white"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full text-zinc-500 transition-colors hover:bg-white/[0.04] hover:text-white"
                     >
                       <span className="text-sm font-medium">𝕏</span>
                     </a>
@@ -147,10 +147,10 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Form */}
-        <section className="py-20 sm:py-28">
+        <section className="py-16 sm:py-24 lg:py-28">
           <Container>
-            <div className="grid gap-12 lg:grid-cols-[0.4fr_1fr] lg:gap-20">
-              <div>
+            <div className="grid gap-10 sm:gap-12 lg:grid-cols-[0.4fr_1fr] lg:gap-20">
+              <div className="min-w-0">
                 <p className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-600">
                   Start a project
                 </p>
@@ -171,12 +171,12 @@ export default function ContactPage() {
         </section>
 
         {/* CTA */}
-        <section className="pb-20 sm:pb-28">
+        <section className="pb-16 sm:pb-24 lg:pb-28">
           <Container>
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/[0.09] bg-white/[0.025] px-6 py-12 sm:px-10 sm:py-14 lg:px-14">
+            <div className="relative overflow-hidden rounded-[1.5rem] border border-white/[0.09] bg-white/[0.025] px-5 py-10 sm:rounded-[2rem] sm:px-10 sm:py-14 lg:px-14">
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute right-[-120px] top-[-180px] h-[400px] w-[400px] rounded-full bg-purple-500/[0.08] blur-[120px]"
+                className="pointer-events-none absolute right-[-140px] top-[-180px] h-[360px] w-[360px] rounded-full bg-purple-500/[0.08] blur-[120px] sm:right-[-120px] sm:h-[400px] sm:w-[400px]"
               />
 
               <div
@@ -184,8 +184,8 @@ export default function ContactPage() {
                 className="pointer-events-none absolute bottom-[-220px] left-[-180px] h-[360px] w-[360px] rounded-full bg-blue-500/[0.05] blur-[120px]"
               />
 
-              <div className="relative flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
-                <div>
+              <div className="relative flex flex-col justify-between gap-8 lg:flex-row lg:items-end lg:gap-10">
+                <div className="min-w-0">
                   <p className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-500">
                     Let&apos;s build
                   </p>
@@ -201,20 +201,18 @@ export default function ContactPage() {
 
                 <Link
                   href="/projects"
-                  className="group inline-flex w-fit shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:opacity-90"
+                  className="group inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-5 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:opacity-90 sm:w-fit sm:px-6"
                 >
                   Explore my work
-
                   <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </div>
 
               <Link
                 href="/about"
-                className="group relative mt-8 inline-flex items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white"
+                className="group relative mt-7 inline-flex items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white sm:mt-8"
               >
                 Or learn more about me
-
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
               </Link>
             </div>
