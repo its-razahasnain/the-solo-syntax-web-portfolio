@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "The Solo Syntax",
 
-  url: "https://the-solo-syntax.vercel.app",
+  url: "https://thesolosyntax.vercel.app",
 
   description:
     "Modern websites built with clean code, thoughtful design and real performance.",
