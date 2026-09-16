@@ -379,7 +379,7 @@ export function ProjectsPage() {
 
           <div className="grid gap-5 lg:grid-cols-2">
             {projects.map((project, index) => {
-              const isBuilt = Boolean(project.liveUrl);
+              const isBuilt = project.name === "Tavern";
 
               return (
                 <Link

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-
 import {
   ArrowRight,
   ArrowUpRight,
@@ -24,13 +23,13 @@ const process = [
     number: "01",
     title: "Understand",
     description:
-      "I start with the idea, the audience, the business and the requirements behind the project.",
+      "I start by understanding the idea, audience, business goals and requirements behind the project.",
   },
   {
     number: "02",
     title: "Build",
     description:
-      "I turn that direction into a modern interface with the frontend and backend functionality the project needs.",
+      "I turn that direction into a modern website or web application with the frontend and backend functionality it needs.",
   },
   {
     number: "03",
@@ -104,9 +103,10 @@ export function AboutPage() {
               {/* Description */}
               <p className="mt-7 max-w-[650px] text-[15px] leading-7 text-zinc-400 sm:mt-8 sm:text-[17px] sm:leading-8">
                 I&apos;m Hasnain Raza, a full-stack web developer from
-                Pakistan. I build modern websites and web applications that
-                help businesses, professionals and individuals establish a
-                strong digital presence.
+                Pakistan. I started learning web development in 2022 and have
+                since worked on websites and web applications for businesses,
+                professionals and individuals looking to build a stronger
+                digital presence.
               </p>
 
               {/* Actions */}
@@ -259,30 +259,33 @@ export function AboutPage() {
             </h2>
 
             <p className="mt-4 max-w-sm text-sm leading-6 text-zinc-600">
-              How I approach the work behind every digital experience.
+              The principles I bring to the work behind every digital
+              experience.
             </p>
           </div>
 
           {/* Content */}
           <div className="max-w-3xl space-y-5 text-[15px] leading-7 text-zinc-400 sm:space-y-6 sm:text-base sm:leading-8">
             <p>
-              I believe a website should do more than simply look good. It
-              should clearly represent the business, professional or person
-              behind it and make their digital presence easier to understand.
+              I started learning web development in 2022 through different
+              courses and YouTube-based learning. Since then, I&apos;ve kept
+              building, experimenting and working on real projects to turn
+              what I learn into practical experience.
             </p>
 
             <p>
-              I combine frontend development with backend thinking, with a
-              strong focus on performance, responsiveness, usability and clean
-              maintainable code. The goal is to create something that feels
-              polished while still working properly underneath.
+              I&apos;ve worked on around 10 local and global projects,
+              including paid projects, while continuing my studies and
+              freelance work. As a solo developer, I&apos;ve taken
+              responsibility for projects from the initial requirements
+              through development and delivery.
             </p>
 
             <p>
-              Every project has different requirements, so I choose
-              technologies based on what actually makes sense for the product.
-              I avoid unnecessary complexity and prefer modern tools that help
-              create a reliable, scalable experience.
+              My focus is on building websites and web applications that are
+              useful, responsive and fast. I care about user experience, clean
+              maintainable code and avoiding unnecessary complexity, while
+              choosing technologies based on what each project actually needs.
             </p>
           </div>
         </div>
@@ -374,8 +377,8 @@ export function AboutPage() {
             </h2>
 
             <p className="mt-5 max-w-sm text-sm leading-7 text-zinc-500">
-              A combination of frontend craftsmanship, backend development
-              and practical technical decisions.
+              A combination of frontend craftsmanship, backend development and
+              practical technical decisions.
             </p>
           </div>
 
