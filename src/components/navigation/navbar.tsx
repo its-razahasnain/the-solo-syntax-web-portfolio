@@ -30,7 +30,7 @@ export function Navbar() {
           >
             <div className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full">
               <Image
-                src="/brand/logo-mark.svg"
+                src="/logo-mark.webp"
                 alt="The Solo Syntax logo"
                 width={36}
                 height={36}

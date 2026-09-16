@@ -93,6 +93,7 @@ export function ContactForm() {
       className="min-w-0 rounded-[1.5rem] border border-white/[0.08] bg-white/[0.025] p-5 sm:rounded-[1.75rem] sm:p-8"
     >
       <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
+        {/* Name */}
         <div className="min-w-0">
           <label
             htmlFor="name"
@@ -113,6 +114,7 @@ export function ContactForm() {
           />
         </div>
 
+        {/* Email */}
         <div className="min-w-0">
           <label
             htmlFor="email"
@@ -134,6 +136,7 @@ export function ContactForm() {
         </div>
       </div>
 
+      {/* Project Type */}
       <div className="mt-5 sm:mt-6">
         <label
           htmlFor="projectType"
@@ -148,9 +151,13 @@ export function ContactForm() {
             name="projectType"
             defaultValue=""
             required
-            className="h-12 w-full min-w-0 appearance-none rounded-xl border border-white/[0.08] bg-[#09090b] px-4 pr-11 text-sm text-zinc-300 outline-none transition-all duration-200 hover:border-white/[0.13] focus:border-indigo-400/50 focus:bg-white/[0.035]"
+            className="h-12 w-full min-w-0 cursor-pointer appearance-none rounded-xl border border-white/[0.08] bg-[#09090b] px-4 pr-11 text-sm text-zinc-300 outline-none transition-all duration-200 hover:border-white/[0.13] focus:border-indigo-400/50 focus:bg-[#0c0c0f] focus:ring-1 focus:ring-indigo-400/10"
           >
-            <option value="" disabled className="bg-[#09090b] text-zinc-500">
+            <option
+              value=""
+              disabled
+              className="bg-[#09090b] text-zinc-600"
+            >
               Select a project type
             </option>
 
@@ -178,6 +185,7 @@ export function ContactForm() {
         </p>
       </div>
 
+      {/* Budget */}
       <div className="mt-5 sm:mt-6">
         <label
           htmlFor="budget"
@@ -199,6 +207,7 @@ export function ContactForm() {
         />
       </div>
 
+      {/* Message */}
       <div className="mt-5 sm:mt-6">
         <label
           htmlFor="message"
@@ -218,6 +227,7 @@ export function ContactForm() {
         />
       </div>
 
+      {/* Honeypot */}
       <div
         aria-hidden="true"
         className="absolute left-[-9999px] h-0 w-0 overflow-hidden"
@@ -233,6 +243,7 @@ export function ContactForm() {
         />
       </div>
 
+      {/* Status */}
       {status.type && (
         <div
           role={status.type === "success" ? "status" : "alert"}
@@ -250,6 +261,7 @@ export function ContactForm() {
         </div>
       )}
 
+      {/* Submit */}
       <div className="mt-6 flex flex-col gap-5 border-t border-white/[0.07] pt-5 sm:mt-7 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:pt-6">
         <p className="max-w-sm text-xs leading-5 text-zinc-600">
           By sending this inquiry, you&apos;re simply starting a conversation.
