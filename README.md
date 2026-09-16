@@ -1,36 +1,148 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Solo Syntax
 
-## Getting Started
+> Modern websites built with clean code, thoughtful design and real performance.
 
-First, run the development server:
+The Solo Syntax is a modern personal portfolio website showcasing full-stack web development, selected projects, technical capabilities, and the approach behind building polished digital experiences.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Live Website
+
+**https://thesolosyntax.vercel.app**
+
+## About
+
+The Solo Syntax is designed as a premium, minimal portfolio experience with a strong focus on:
+
+- Clean and maintainable code
+- Modern user interfaces
+- Responsive design
+- Performance
+- Accessibility
+- Thoughtful interactions
+- Full-stack web development
+
+The website includes dedicated pages for projects, about, skills, and contact, along with detailed project case studies.
+
+## Features
+
+- Responsive design across desktop, tablet, and mobile
+- Modern dark visual system
+- Blue-to-purple gradient accents
+- Interactive navigation
+- Mobile navigation menu
+- Animated hero typewriter effect
+- Project showcase
+- Dedicated project case studies
+- About and capabilities sections
+- Skills and technology overview
+- Production contact form
+- Contact form validation
+- Honeypot protection for basic spam prevention
+- Server-side input validation
+- HTML escaping for submitted content
+- Production error handling
+- SEO metadata
+- Sitemap generation
+- Robots.txt
+- Google Search Console support
+- Custom favicon
+- Security response headers
+
+## Pages
+
+| Page     | Route              |
+| -------- | ------------------ |
+| Home     | `/`                |
+| Projects | `/projects`        |
+| Tavern   | `/projects/tavern` |
+| Nexora   | `/projects/nexora` |
+| Velora   | `/projects/velora` |
+| Lume     | `/projects/lume`   |
+| About    | `/about`           |
+| Skills   | `/skills`          |
+| Contact  | `/contact`         |
+
+## Featured Project
+
+### Tavern
+
+Tavern is a full-stack web application showcased as the primary project case study on The Solo Syntax.
+
+The case study presents:
+
+- Project concept
+- Product experience
+- Interface design
+- Key implementation areas
+- Technology stack
+- Project visuals
+- Live project link
+
+## Tech Stack
+
+### Core
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+
+### Development
+
+- pnpm
+- ESLint
+- React Compiler
+- Next.js App Router
+
+### Backend / Services
+
+- Next.js Route Handlers
+- Resend
+
+### Deployment
+
+- Vercel
+
+## Project Structure
+
+```text
+the-solo-syntax/
+├── public/
+│   ├── favicon.ico
+│   ├── logo-mark.png
+│   └── ...
+│
+├── src/
+│   ├── app/
+│   │   ├── about/
+│   │   ├── api/
+│   │   │   └── contact/
+│   │   ├── contact/
+│   │   ├── projects/
+│   │   │   └── ...
+│   │   ├── skills/
+│   │   ├── error.tsx
+│   │   ├── not-found.tsx
+│   │   ├── robots.ts
+│   │   ├── sitemap.ts
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   │
+│   ├── components/
+│   │   ├── layout/
+│   │   ├── navigation/
+│   │   ├── sections/
+│   │   └── ui/
+│   │
+│   └── lib/
+│       └── ...
+│
+├── .gitignore
+├── next.config.ts
+├── package.json
+├── pnpm-lock.yaml
+├── postcss.config.mjs
+├── README.md
+└── tsconfig.json
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
