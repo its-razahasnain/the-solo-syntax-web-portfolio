@@ -11,6 +11,7 @@ export function Contact() {
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-10">
         <div className="relative overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-white/[0.025] px-5 py-10 sm:rounded-[2rem] sm:px-10 sm:py-14 lg:px-16 lg:py-16">
           <div className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl sm:h-80 sm:w-80" />
+
           <div className="pointer-events-none absolute -bottom-40 left-1/3 h-72 w-72 rounded-full bg-purple-500/10 blur-3xl sm:h-80 sm:w-80" />
 
           <div className="relative grid gap-8 sm:gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
@@ -31,8 +32,9 @@ export function Contact() {
               </h2>
 
               <p className="mt-5 max-w-2xl text-[15px] leading-7 text-zinc-400 sm:text-base">
-                Have a website, web application, or digital project in mind?
-                Tell me what you&apos;re working on and what you need.
+                Need a website or web application for your business, brand, or
+                next idea? Tell me what you&apos;re building and I&apos;ll help
+                turn it into a modern digital experience.
               </p>
             </div>
 
@@ -41,7 +43,9 @@ export function Contact() {
               className="group inline-flex min-h-11 w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-3.5 text-sm font-medium text-white shadow-lg shadow-blue-500/10 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-purple-500/10 sm:w-fit"
             >
               <Mail className="h-4 w-4" />
+
               Get in touch
+
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
           </div>

@@ -29,11 +29,8 @@ export function Hero() {
         aria-hidden="true"
       >
         <div className="absolute left-[-180px] top-[-180px] h-[420px] w-[420px] rounded-full bg-blue-600/[0.08] blur-[120px] sm:left-[8%] sm:h-[500px] sm:w-[500px] sm:blur-[140px]" />
-
         <div className="absolute right-[-160px] top-[18%] h-[340px] w-[340px] rounded-full bg-violet-600/[0.07] blur-[120px] sm:right-[8%] sm:h-[420px] sm:w-[420px] sm:blur-[140px]" />
-
         <div className="absolute bottom-[-220px] left-[35%] h-[420px] w-[620px] rounded-full bg-blue-700/[0.06] blur-[150px]" />
-
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(255,255,255,0.025),transparent_55%)]" />
       </div>
 
@@ -48,7 +45,7 @@ export function Hero() {
             />
 
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-400 sm:text-xs sm:tracking-[0.24em]">
-              Hi, I&apos;m The Solo Syntax
+              Full-Stack Web Developer
             </p>
           </div>
 
@@ -63,8 +60,9 @@ export function Hero() {
 
           {/* Description */}
           <p className="mt-5 max-w-[600px] text-sm leading-6 text-zinc-400 sm:mt-6 sm:text-base sm:leading-7">
-            I design and develop high-performance websites for businesses,
-            brands and individuals. Clean code. Modern design. Real results.
+            I build fast, modern websites and web experiences for businesses,
+            professionals, and individuals — helping them establish a strong
+            digital presence without unnecessary complexity.
           </p>
 
           {/* CTA buttons */}
@@ -86,7 +84,7 @@ export function Hero() {
                 <Play className="ml-0.5 h-3 w-3 fill-current" />
               </span>
 
-              Watch Intro
+              Discover More
             </Link>
           </div>
 
@@ -104,7 +102,7 @@ export function Hero() {
 
             <div className="flex items-center gap-2.5">
               <Check className="h-4 w-4 shrink-0 text-violet-400" />
-              <span>SEO Optimized</span>
+              <span>SEO Ready</span>
             </div>
 
             <span
@@ -145,7 +143,6 @@ export function Hero() {
                 <span className="h-1.5 w-1.5 rounded-full bg-white/20 sm:h-2 sm:w-2" />
                 <span className="h-1.5 w-1.5 rounded-full bg-white/20 sm:h-2 sm:w-2" />
                 <span className="h-1.5 w-1.5 rounded-full bg-white/20 sm:h-2 sm:w-2" />
-
                 <div className="mx-auto h-4 w-[42%] rounded-[4px] border border-white/[0.06] bg-white/[0.025] sm:h-5 sm:rounded-md" />
               </div>
 

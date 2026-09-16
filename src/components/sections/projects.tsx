@@ -16,8 +16,13 @@ export function Projects() {
             </p>
 
             <h2 className="max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Featured Projects
+              A selection of work
             </h2>
+
+            <p className="mt-3 max-w-xl text-sm leading-6 text-zinc-500 sm:text-[15px] sm:leading-7">
+              A mix of real client-focused experience and conceptual products
+              built to explore modern web experiences.
+            </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
