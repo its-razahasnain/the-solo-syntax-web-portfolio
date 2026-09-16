@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import {
   ArrowLeft,
   ArrowRight,
@@ -14,6 +15,9 @@ import {
   Tablet,
   Utensils,
 } from "lucide-react";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const details = [
   {
@@ -102,7 +106,6 @@ export function TavernCaseStudy() {
       {/* =========================================================
           HERO
       ========================================================= */}
-
       <section className="relative overflow-hidden border-b border-white/[0.06]">
         <div
           aria-hidden="true"
@@ -135,7 +138,6 @@ export function TavernCaseStudy() {
 
           <div className="mt-10 grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-14">
             {/* Hero copy */}
-
             <div>
               <div className="mb-5 flex items-center gap-3">
                 <span className="h-px w-8 bg-gradient-to-r from-blue-500 to-purple-500" />
@@ -161,7 +163,7 @@ export function TavernCaseStudy() {
 
               <div className="mt-7 flex flex-wrap items-center gap-5">
                 <a
-                  href="https://tavern-virid.vercel.app/"
+                  href="https://tavernrestaurant.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:opacity-90"
@@ -169,6 +171,20 @@ export function TavernCaseStudy() {
                   Visit live site
 
                   <ExternalLink className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </a>
+
+                <a
+                  href="https://github.com/its-razahasnain/tavern"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white"
+                >
+                  View source
+
+                  <FontAwesomeIcon
+                    icon={faGithub}
+                    className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
                 </a>
 
                 <Link
@@ -183,7 +199,6 @@ export function TavernCaseStudy() {
             </div>
 
             {/* Tavern homepage mockup */}
-
             <div className="relative lg:pl-2">
               <div
                 aria-hidden="true"
@@ -192,7 +207,6 @@ export function TavernCaseStudy() {
 
               <div className="relative rotate-[1deg] overflow-hidden rounded-[1.5rem] border border-white/[0.12] bg-[#090a0d] shadow-2xl shadow-black/40 transition-transform duration-500 hover:rotate-0">
                 {/* Browser chrome */}
-
                 <div className="flex h-10 items-center gap-3 border-b border-white/[0.07] bg-white/[0.018] px-4 sm:h-11">
                   <div className="flex items-center gap-1.5">
                     <span className="h-2 w-2 rounded-full bg-white/15" />
@@ -202,7 +216,7 @@ export function TavernCaseStudy() {
 
                   <div className="mx-auto flex h-6 w-[58%] items-center justify-center rounded-md border border-white/[0.06] bg-black/20">
                     <span className="truncate font-mono text-[8px] text-zinc-600">
-                      tavern-virid.vercel.app
+                      tavernrestaurant.vercel.app
                     </span>
                   </div>
 
@@ -210,7 +224,6 @@ export function TavernCaseStudy() {
                 </div>
 
                 {/* Actual Tavern hero */}
-
                 <div className="relative h-[255px] overflow-hidden sm:h-[320px] lg:h-[365px]">
                   <Image
                     src="/projects/tavern/tavern-hero.webp"
@@ -228,7 +241,6 @@ export function TavernCaseStudy() {
                   <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/40 to-transparent" />
 
                   {/* Mini Tavern navbar */}
-
                   <div className="relative z-10 flex items-center justify-between px-5 py-4 sm:px-7">
                     <span className="font-serif text-sm font-medium tracking-[0.04em] text-white sm:text-base">
                       TAVERN
@@ -250,7 +262,6 @@ export function TavernCaseStudy() {
                   </div>
 
                   {/* Mini Tavern hero content */}
-
                   <div className="relative z-10 flex h-[calc(100%-60px)] items-center px-6 sm:px-10">
                     <div className="max-w-md">
                       <p className="text-[7px] uppercase tracking-[0.26em] text-white/65 sm:text-[8px]">
@@ -286,7 +297,6 @@ export function TavernCaseStudy() {
                 </div>
 
                 {/* Browser footer */}
-
                 <div className="flex items-center justify-between border-t border-white/[0.07] px-4 py-2.5">
                   <div className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-400/60" />
@@ -305,7 +315,6 @@ export function TavernCaseStudy() {
           </div>
 
           {/* Project details */}
-
           <div className="mt-10 grid border-y border-white/[0.07] sm:grid-cols-4 sm:divide-x sm:divide-white/[0.07]">
             {details.map((detail) => {
               const Icon = detail.icon;
@@ -339,7 +348,6 @@ export function TavernCaseStudy() {
       {/* =========================================================
           OVERVIEW
       ========================================================= */}
-
       <section className="relative border-b border-white/[0.06]">
         <div className="mx-auto grid max-w-[1440px] gap-8 px-5 py-14 sm:px-8 sm:py-16 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20 lg:px-10 lg:py-20">
           <div>
@@ -347,29 +355,33 @@ export function TavernCaseStudy() {
               The concept
             </p>
 
-            <h2 className="mt-4 max-w-sm text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl">
-              A digital home for a fictional restaurant.
+            <h2 className="mt-4 max-w-lg text-3xl font-semibold leading-[1.05] tracking-[-0.045em] text-white sm:text-4xl lg:text-5xl">
+              A digital home for a{" "}
+              <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">
+                fictional restaurant.
+              </span>
             </h2>
           </div>
 
           <div className="max-w-3xl space-y-4 text-[15px] leading-7 text-zinc-400 sm:text-base sm:leading-8">
             <p>
-              Tavern is an imaginary restaurant concept created to explore how
-              a premium hospitality brand could translate into a complete
-              digital experience.
+              Tavern is an imaginary restaurant concept created as a portfolio
+              project to explore how a premium hospitality brand could
+              translate into a complete digital experience.
             </p>
 
             <p>
-              The website was designed around atmosphere first. Food,
-              typography, imagery, storytelling and calls to action work
-              together to create a warm, intentional and easy-to-navigate
-              experience.
+              I designed and developed the entire experience from the ground
+              up, focusing on atmosphere, usability, responsive behavior and
+              the journey a visitor takes from discovering the restaurant to
+              exploring its menu and making a reservation.
             </p>
 
             <p>
-              The concept brings together the core experiences a restaurant
-              website needs — discovering the menu, learning the story,
-              exploring the gallery and booking a table.
+              The concept brings together the core experiences a modern
+              restaurant website needs — discovering the menu, learning the
+              story, exploring the gallery and booking a table — while keeping
+              the interface focused and easy to navigate.
             </p>
           </div>
         </div>
@@ -378,7 +390,6 @@ export function TavernCaseStudy() {
       {/* =========================================================
           WHAT WAS BUILT
       ========================================================= */}
-
       <section className="relative border-b border-white/[0.06]">
         <div className="mx-auto max-w-[1440px] px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
           <div className="mb-10 grid gap-5 lg:grid-cols-[0.8fr_0.7fr] lg:items-end lg:justify-between">
@@ -387,8 +398,11 @@ export function TavernCaseStudy() {
                 What was built
               </p>
 
-              <h2 className="max-w-2xl text-3xl font-semibold tracking-[-0.045em] text-white sm:text-4xl lg:text-5xl">
-                Every part has a purpose.
+              <h2 className="max-w-2xl text-3xl font-semibold leading-[1.05] tracking-[-0.045em] text-white sm:text-4xl lg:text-5xl">
+                Every part{" "}
+                <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">
+                  has a purpose.
+                </span>
               </h2>
             </div>
 
@@ -440,7 +454,6 @@ export function TavernCaseStudy() {
           </div>
 
           {/* Responsive experience */}
-
           <div className="mt-4 overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-white/[0.02]">
             <div className="grid sm:grid-cols-3 sm:divide-x sm:divide-white/[0.07]">
               <div className="flex items-center gap-4 border-b border-white/[0.07] px-6 py-5 sm:border-b-0">
@@ -486,7 +499,6 @@ export function TavernCaseStudy() {
       {/* =========================================================
           TECHNOLOGY
       ========================================================= */}
-
       <section className="relative border-b border-white/[0.06]">
         <div className="mx-auto max-w-[1440px] px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
           <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
@@ -495,14 +507,17 @@ export function TavernCaseStudy() {
                 Technology
               </p>
 
-              <h2 className="mt-4 max-w-md text-3xl font-semibold tracking-[-0.045em] text-white sm:text-4xl">
-                Built with a modern stack.
+              <h2 className="mt-4 max-w-md text-3xl font-semibold leading-[1.05] tracking-[-0.045em] text-white sm:text-4xl lg:text-5xl">
+                Built with a{" "}
+                <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">
+                  modern stack.
+                </span>
               </h2>
 
               <p className="mt-4 max-w-sm text-sm leading-7 text-zinc-500">
-                The same production-focused stack used for The Solo Syntax
-                powers the Tavern concept, keeping the experience modern,
-                maintainable and responsive.
+                The project uses the same production-focused approach as The
+                Solo Syntax, with technologies selected around performance,
+                maintainability and the requirements of the experience.
               </p>
             </div>
 
@@ -540,9 +555,98 @@ export function TavernCaseStudy() {
       </section>
 
       {/* =========================================================
+          PROJECT LINKS
+      ========================================================= */}
+      <section className="relative border-b border-white/[0.06]">
+        <div className="mx-auto max-w-[1440px] px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
+          <div className="grid gap-4 sm:grid-cols-2">
+            <a
+              href="https://tavernrestaurant.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/[0.13] hover:bg-white/[0.03] sm:p-8"
+            >
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute right-[-100px] top-[-100px] h-52 w-52 rounded-full bg-blue-500/[0.05] blur-3xl"
+              />
+
+              <div className="relative flex items-start justify-between gap-5">
+                <div>
+                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-600">
+                    Live project
+                  </p>
+
+                  <h3 className="mt-3 text-xl font-medium tracking-tight text-white sm:text-2xl">
+                    Visit Tavern
+                  </h3>
+
+                  <p className="mt-2 max-w-md text-sm leading-6 text-zinc-500">
+                    Explore the complete responsive restaurant experience in
+                    the browser.
+                  </p>
+                </div>
+
+                <ExternalLink className="h-5 w-5 shrink-0 text-zinc-600 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" />
+              </div>
+
+              <div className="relative mt-7 flex items-center gap-2">
+                <span className="h-px w-7 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-12" />
+
+                <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-zinc-600">
+                  tavernrestaurant.vercel.app
+                </span>
+              </div>
+            </a>
+
+            <a
+              href="https://github.com/its-razahasnain/tavern"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/[0.13] hover:bg-white/[0.03] sm:p-8"
+            >
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute bottom-[-100px] left-[-100px] h-52 w-52 rounded-full bg-purple-500/[0.05] blur-3xl"
+              />
+
+              <div className="relative flex items-start justify-between gap-5">
+                <div>
+                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-600">
+                    Source code
+                  </p>
+
+                  <h3 className="mt-3 text-xl font-medium tracking-tight text-white sm:text-2xl">
+                    View on GitHub
+                  </h3>
+
+                  <p className="mt-2 max-w-md text-sm leading-6 text-zinc-500">
+                    Browse the codebase and implementation behind the Tavern
+                    concept.
+                  </p>
+                </div>
+
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  className="h-5 w-5 shrink-0 text-zinc-600 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white"
+                />
+              </div>
+
+              <div className="relative mt-7 flex items-center gap-2">
+                <span className="h-px w-7 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-12" />
+
+                <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-zinc-600">
+                  its-razahasnain / tavern
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
           CTA
       ========================================================= */}
-
       <section className="relative">
         <div className="mx-auto max-w-[1440px] px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
           <div className="relative overflow-hidden rounded-[2rem] border border-white/[0.09] bg-white/[0.025] px-6 py-11 sm:px-10 sm:py-14 lg:px-14">

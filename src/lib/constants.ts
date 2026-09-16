@@ -84,7 +84,7 @@ export const projects = [
       "A full-stack restaurant website concept built to show how menus, reservations and a stronger digital presence can work together.",
     variant: "tavern",
     href: "/projects/tavern",
-    liveUrl: "https://tavern-virid.vercel.app/",
+    liveUrl: "https://tavernrestaurant.vercel.app/",
     status: "live",
   },
   {
