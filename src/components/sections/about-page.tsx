@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+
 import {
   ArrowRight,
   ArrowUpRight,
@@ -22,19 +24,19 @@ const process = [
     number: "01",
     title: "Understand",
     description:
-      "I start by understanding the idea, the audience and what the product actually needs to achieve.",
+      "I start with the idea, the audience, the business and the requirements behind the project.",
   },
   {
     number: "02",
     title: "Build",
     description:
-      "I turn the direction into a polished interface backed by clean, scalable and maintainable code.",
+      "I turn that direction into a modern interface with the frontend and backend functionality the project needs.",
   },
   {
     number: "03",
     title: "Refine",
     description:
-      "I focus on the details, performance and responsiveness that make the final experience feel complete.",
+      "I improve the details, responsiveness, performance and usability until the experience feels complete.",
   },
 ] as const;
 
@@ -44,42 +46,53 @@ export function AboutPage() {
       {/* =========================================================
           ABOUT HERO
       ========================================================= */}
-      <section className="relative overflow-hidden border-b border-white/[0.06]">
-        {/* Ambient glows */}
+      <section className="relative min-h-[calc(100svh-5rem)] overflow-hidden border-b border-white/[0.06]">
+        {/* Ambient glow */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -left-40 top-16 h-[300px] w-[300px] rounded-full bg-blue-500/[0.06] blur-[110px] sm:-left-32 sm:top-20 sm:h-[420px] sm:w-[420px] sm:bg-blue-500/[0.07] sm:blur-[140px]"
+          className="pointer-events-none absolute -left-48 top-0 h-[420px] w-[420px] rounded-full bg-blue-600/[0.055] blur-[140px] sm:h-[600px] sm:w-[600px] sm:blur-[170px]"
         />
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-32 -top-20 h-[340px] w-[340px] rounded-full bg-purple-500/[0.06] blur-[120px] sm:right-[-100px] sm:top-[-100px] sm:h-[500px] sm:w-[500px] sm:bg-purple-500/[0.07] sm:blur-[150px]"
+          className="pointer-events-none absolute -right-48 -top-40 h-[500px] w-[500px] rounded-full bg-purple-600/[0.065] blur-[150px] sm:h-[700px] sm:w-[700px] sm:blur-[180px]"
         />
 
-        {/* Subtle grid */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-[0.02] sm:opacity-[0.025]"
+          className="pointer-events-none absolute -bottom-56 left-1/3 h-[350px] w-[350px] rounded-full bg-blue-600/[0.035] blur-[140px] sm:h-[500px] sm:w-[500px]"
+        />
+
+        {/* Background grid */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-[0.022] sm:opacity-[0.03]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
+              "linear-gradient(rgba(255,255,255,0.55) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.55) 1px, transparent 1px)",
             backgroundSize: "64px 64px",
           }}
         />
 
-        <div className="relative mx-auto max-w-[1440px] px-5 pb-16 pt-14 sm:px-8 sm:pb-28 sm:pt-24 lg:px-10 lg:pb-32 lg:pt-28">
-          <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-20">
+        {/* Hero container */}
+        <div className="relative mx-auto flex min-h-[calc(100svh-5rem)] max-w-[1440px] items-center px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
+          <div className="grid w-full items-center gap-10 lg:grid-cols-[0.98fr_1.02fr] lg:gap-12 xl:gap-16">
             {/* Left */}
             <div className="min-w-0">
-              <div className="mb-6 flex items-center gap-3 sm:mb-7">
-                <span className="h-px w-7 shrink-0 bg-gradient-to-r from-blue-500 to-purple-500 sm:w-8" />
+              {/* Eyebrow */}
+              <div className="mb-6 flex items-center gap-5 sm:mb-7">
+                <span
+                  aria-hidden="true"
+                  className="h-[3px] w-14 shrink-0 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 sm:w-16"
+                />
 
-                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-zinc-500 sm:text-xs sm:tracking-[0.2em]">
+                <span className="text-[11px] font-medium uppercase tracking-[0.24em] text-zinc-400 sm:text-xs sm:tracking-[0.28em]">
                   About me
                 </span>
               </div>
 
-              <h1 className="max-w-4xl text-[clamp(3rem,11vw,6.5rem)] font-semibold leading-[0.9] tracking-[-0.065em] text-white sm:text-[clamp(3.25rem,6vw,6.5rem)]">
+              {/* Heading */}
+              <h1 className="max-w-[680px] text-[clamp(3.4rem,7.2vw,6.5rem)] font-semibold leading-[0.88] tracking-[-0.065em] text-white">
                 The person
                 <br />
                 behind the{" "}
@@ -88,99 +101,127 @@ export function AboutPage() {
                 </span>
               </h1>
 
-              <p className="mt-7 max-w-2xl text-[15px] leading-7 text-zinc-400 sm:mt-8 sm:text-lg sm:leading-8">
-                I&apos;m a full-stack web developer focused on turning ideas
-                into modern, purposeful digital experiences that look great,
-                feel intuitive and perform the way they should.
+              {/* Description */}
+              <p className="mt-7 max-w-[650px] text-[15px] leading-7 text-zinc-400 sm:mt-8 sm:text-[17px] sm:leading-8">
+                I&apos;m Hasnain Raza, a full-stack web developer from
+                Pakistan. I build modern websites and web applications that
+                help businesses, professionals and individuals establish a
+                strong digital presence.
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-4 sm:mt-9">
+              {/* Actions */}
+              <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4 sm:mt-9">
                 <Link
                   href="/projects"
-                  className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:opacity-90"
+                  className="group inline-flex min-h-10 items-center gap-3 text-sm font-semibold text-white transition-colors duration-200 hover:text-zinc-300 sm:text-[15px]"
                 >
                   Explore my work
-                  <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+                  <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </Link>
 
                 <Link
                   href="/contact"
-                  className="group inline-flex min-h-11 items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white"
+                  className="group inline-flex min-h-10 items-center gap-3 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white sm:text-[15px]"
                 >
                   Let&apos;s talk
-                  <ArrowUpRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </Link>
               </div>
             </div>
 
-            {/* Right visual */}
-            <div className="relative mx-auto w-full max-w-[500px] lg:ml-auto">
+            {/* Right profile mockup */}
+            <div className="relative mx-auto w-full max-w-[650px] lg:ml-auto">
+              {/* Mockup glow */}
               <div
                 aria-hidden="true"
-                className="absolute -inset-5 rounded-[2rem] bg-gradient-to-br from-blue-500/[0.07] via-transparent to-purple-500/[0.07] blur-2xl sm:-inset-8 sm:rounded-[3rem] sm:from-blue-500/[0.08] sm:to-purple-500/[0.08]"
+                className="pointer-events-none absolute -inset-8 rounded-[2.5rem] bg-gradient-to-br from-blue-500/[0.075] via-transparent to-purple-500/[0.09] blur-3xl"
               />
 
-              <div className="relative overflow-hidden rounded-[1.5rem] border border-white/[0.1] bg-[#090a0d]/90 shadow-2xl shadow-black/30 sm:rounded-[2rem]">
-                {/* Window top */}
-                <div className="flex items-center justify-between border-b border-white/[0.07] px-4 py-3 sm:px-5 sm:py-4">
-                  <div className="flex items-center gap-1.5 sm:gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-white/20 sm:h-2 sm:w-2" />
-                    <span className="h-1.5 w-1.5 rounded-full bg-white/20 sm:h-2 sm:w-2" />
-                    <span className="h-1.5 w-1.5 rounded-full bg-white/20 sm:h-2 sm:w-2" />
+              {/* Browser */}
+              <div className="relative overflow-hidden rounded-[1.5rem] border border-blue-400/[0.24] bg-[#070a12]/90 shadow-[0_0_90px_rgba(59,130,246,0.055)] backdrop-blur-xl sm:rounded-[2rem]">
+                {/* Browser bar */}
+                <div className="flex h-12 items-center justify-between border-b border-white/[0.08] px-4 sm:h-14 sm:px-6">
+                  <div className="flex items-center gap-2">
+                    <span className="h-3 w-3 rounded-full border border-white/[0.08] bg-white/[0.18] sm:h-3.5 sm:w-3.5" />
+                    <span className="h-3 w-3 rounded-full border border-white/[0.08] bg-white/[0.18] sm:h-3.5 sm:w-3.5" />
+                    <span className="h-3 w-3 rounded-full border border-white/[0.08] bg-white/[0.18] sm:h-3.5 sm:w-3.5" />
                   </div>
 
-                  <span className="max-w-[150px] truncate font-mono text-[9px] uppercase tracking-[0.14em] text-zinc-600 sm:max-w-none sm:text-[10px] sm:tracking-[0.18em]">
+                  <span className="font-mono text-[9px] tracking-[0.08em] text-zinc-600 sm:text-[10px] sm:tracking-[0.12em]">
                     the-solo-syntax
                   </span>
+
+                  <div className="w-10 sm:w-14" />
                 </div>
 
-                {/* Visual content */}
-                <div className="relative min-h-[330px] overflow-hidden p-5 sm:min-h-[430px] sm:p-9">
+                {/* Mockup content */}
+                <div className="relative min-h-[380px] overflow-hidden px-5 py-6 sm:min-h-[470px] sm:px-8 sm:py-8">
+                  {/* Inner grid */}
                   <div
                     aria-hidden="true"
-                    className="absolute inset-0 opacity-[0.025] sm:opacity-[0.035]"
+                    className="pointer-events-none absolute inset-0 opacity-[0.04]"
                     style={{
                       backgroundImage:
-                        "linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)",
+                        "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
                       backgroundSize: "42px 42px",
                     }}
                   />
 
-                  <div className="relative flex min-h-[290px] flex-col justify-between sm:min-h-[340px]">
-                    <div>
-                      <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-600 sm:text-[11px] sm:tracking-[0.2em]">
-                        Full-stack
-                      </p>
+                  {/* Decorative orb */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute right-5 top-7 flex h-10 w-10 items-center justify-center rounded-full border border-blue-400/[0.22] bg-blue-500/[0.025] sm:right-8 sm:top-8 sm:h-12 sm:w-12"
+                  >
+                    <span className="h-2.5 w-2.5 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 shadow-[0_0_18px_rgba(96,165,250,0.85)]" />
+                  </div>
 
-                      <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-600 sm:text-[11px] sm:tracking-[0.2em]">
-                        Web developer
-                      </p>
-                    </div>
+                  {/* Profile */}
+                  <div className="relative z-10 flex min-h-[280px] items-center justify-center sm:min-h-[350px]">
+                    {/* Photo glow */}
+                    <div
+                      aria-hidden="true"
+                      className="absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-blue-500/20 via-indigo-500/10 to-purple-500/25 blur-[50px] sm:h-56 sm:w-56 sm:blur-[65px]"
+                    />
 
-                    <div className="relative py-10 sm:py-12">
-                      <div className="absolute left-1/2 top-1/2 h-36 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-blue-500/20 via-indigo-500/10 to-purple-500/20 blur-3xl sm:h-44 sm:w-44" />
+                    {/* Gradient ring */}
+                    <div className="relative h-[205px] w-[205px] rounded-full bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-500 p-[2px] shadow-[0_0_55px_rgba(59,130,246,0.18)] sm:h-[270px] sm:w-[270px] sm:shadow-[0_0_65px_rgba(59,130,246,0.2)]">
+                      <div className="relative h-full w-full rounded-full bg-[#080b13] p-[5px] sm:p-[6px]">
+                        <div className="relative h-full w-full overflow-hidden rounded-full border border-white/[0.08]">
+                          <Image
+                            src="/profile.webp"
+                            alt="Hasnain Raza"
+                            fill
+                            sizes="(max-width: 640px) 205px, 270px"
+                            className="object-cover object-top"
+                            priority
+                          />
 
-                      <div className="relative mx-auto flex h-32 w-32 items-center justify-center rounded-full border border-white/[0.1] bg-white/[0.025] shadow-[0_0_80px_rgba(99,102,241,0.08)] sm:h-40 sm:w-40">
-                        <div className="flex h-22 w-22 items-center justify-center rounded-full border border-white/[0.08] bg-black/30 sm:h-28 sm:w-28">
-                          <span className="text-4xl font-semibold tracking-[-0.08em] text-white sm:text-5xl">
-                            SS
-                          </span>
+                          <div
+                            aria-hidden="true"
+                            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/[0.16] via-transparent to-white/[0.025]"
+                          />
                         </div>
                       </div>
                     </div>
+                  </div>
 
-                    <div className="flex items-end justify-between gap-4 border-t border-white/[0.07] pt-4 sm:pt-5">
-                      <div className="min-w-0">
-                        <p className="truncate text-sm font-medium text-white">
-                          The Solo Syntax
-                        </p>
+                  {/* Bottom identity */}
+                  <div className="relative z-10 flex items-end justify-between gap-4 border-t border-white/[0.08] pt-4 sm:pt-5">
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold tracking-[-0.025em] text-white sm:text-base">
+                        The Solo Syntax
+                      </p>
 
-                        <p className="mt-1 text-[10px] text-zinc-600 sm:text-xs">
-                          Design · Code · Performance
-                        </p>
-                      </div>
+                      <p className="mt-1 text-[9px] text-zinc-500 sm:text-[11px]">
+                        Design <span className="mx-1">·</span> Code{" "}
+                        <span className="mx-1">·</span> Performance
+                      </p>
+                    </div>
 
-                      <span className="shrink-0 font-mono text-[11px] text-zinc-600 sm:text-xs">
+                    <div className="flex shrink-0 items-center gap-3">
+                      <span className="hidden h-6 w-px bg-white/[0.08] sm:block" />
+
+                      <span className="font-mono text-[10px] text-zinc-500 sm:text-xs">
                         01
                       </span>
                     </div>
@@ -196,34 +237,52 @@ export function AboutPage() {
           MINDSET
       ========================================================= */}
       <section className="relative border-b border-white/[0.06]">
-        <div className="mx-auto grid max-w-[1440px] gap-9 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20 lg:px-10 lg:py-28">
+        <div className="mx-auto grid max-w-[1440px] gap-10 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20 lg:px-10 lg:py-28">
+          {/* Section heading */}
           <div>
-            <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-500 sm:text-xs sm:tracking-[0.18em]">
-              The mindset
-            </p>
+            <div className="mb-5 flex items-center gap-3">
+              <span
+                aria-hidden="true"
+                className="h-px w-8 shrink-0 bg-gradient-to-r from-blue-500 to-purple-500"
+              />
 
-            <h2 className="mt-4 max-w-sm text-2xl font-semibold tracking-[-0.035em] text-white sm:text-3xl">
-              Good code should disappear behind a great experience.
+              <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500 sm:text-xs sm:tracking-[0.2em]">
+                The mindset
+              </span>
+            </div>
+
+            <h2 className="max-w-md text-3xl font-semibold leading-[1.02] tracking-[-0.045em] text-white sm:text-4xl lg:text-[3.25rem]">
+              Building with{" "}
+              <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">
+                purpose.
+              </span>
             </h2>
+
+            <p className="mt-4 max-w-sm text-sm leading-6 text-zinc-600">
+              How I approach the work behind every digital experience.
+            </p>
           </div>
 
+          {/* Content */}
           <div className="max-w-3xl space-y-5 text-[15px] leading-7 text-zinc-400 sm:space-y-6 sm:text-base sm:leading-8">
             <p>
-              I care about more than making something technically work. A
-              website should feel intentional — every section, interaction and
-              detail should have a reason to exist.
+              I believe a website should do more than simply look good. It
+              should clearly represent the business, professional or person
+              behind it and make their digital presence easier to understand.
             </p>
 
             <p>
-              My approach combines frontend craftsmanship with backend
-              thinking. That means paying attention to visual hierarchy,
-              responsiveness and usability while also thinking about
-              performance, structure and long-term maintainability.
+              I combine frontend development with backend thinking, with a
+              strong focus on performance, responsiveness, usability and clean
+              maintainable code. The goal is to create something that feels
+              polished while still working properly underneath.
             </p>
 
             <p>
-              The goal is simple: build digital products that are fast,
-              reliable and memorable without adding unnecessary complexity.
+              Every project has different requirements, so I choose
+              technologies based on what actually makes sense for the product.
+              I avoid unnecessary complexity and prefer modern tools that help
+              create a reliable, scalable experience.
             </p>
           </div>
         </div>
@@ -234,34 +293,47 @@ export function AboutPage() {
       ========================================================= */}
       <section className="relative border-b border-white/[0.06]">
         <div className="mx-auto max-w-[1440px] px-5 py-16 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
-          <div className="mb-10 flex flex-col justify-between gap-5 sm:mb-12 sm:flex-row sm:items-end">
+          <div className="mb-10 flex flex-col justify-between gap-6 sm:mb-12 sm:flex-row sm:items-end">
+            {/* Section heading */}
             <div>
-              <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-500 sm:text-xs sm:tracking-[0.18em]">
-                How I work
-              </p>
+              <div className="mb-5 flex items-center gap-3">
+                <span
+                  aria-hidden="true"
+                  className="h-px w-8 shrink-0 bg-gradient-to-r from-blue-500 to-purple-500"
+                />
 
-              <h2 className="text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl">
-                From idea to execution.
+                <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500 sm:text-xs sm:tracking-[0.2em]">
+                  How I work
+                </span>
+              </div>
+
+              <h2 className="max-w-xl text-3xl font-semibold leading-[1.02] tracking-[-0.045em] text-white sm:text-4xl lg:text-[3.25rem]">
+                From idea to{" "}
+                <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">
+                  execution.
+                </span>
               </h2>
             </div>
 
+            {/* Supporting copy */}
             <p className="max-w-sm text-sm leading-6 text-zinc-500">
-              A straightforward process designed to keep the work focused,
-              thoughtful and purposeful.
+              A straightforward process built around understanding first, then
+              creating and refining with purpose.
             </p>
           </div>
 
+          {/* Process cards */}
           <div className="grid border-y border-white/[0.08] md:grid-cols-3 md:divide-x md:divide-white/[0.08]">
             {process.map((item) => (
               <div
                 key={item.number}
-                className="group px-0 py-7 sm:py-8 md:px-8 md:py-10 first:md:pl-0 last:md:pr-0"
+                className="group py-7 sm:py-8 md:px-8 md:py-10 first:md:pl-0 last:md:pr-0"
               >
-                <span className="text-[11px] font-medium tracking-[0.14em] text-zinc-600 sm:text-xs sm:tracking-[0.16em]">
+                <span className="font-mono text-[11px] tracking-[0.14em] text-zinc-600 sm:text-xs">
                   {item.number}
                 </span>
 
-                <h3 className="mt-5 text-xl font-medium tracking-tight text-white sm:mt-6">
+                <h3 className="mt-5 text-xl font-medium tracking-[-0.02em] text-white sm:mt-6">
                   {item.title}
                 </h3>
 
@@ -281,21 +353,33 @@ export function AboutPage() {
       ========================================================= */}
       <section className="relative border-b border-white/[0.06]">
         <div className="mx-auto grid max-w-[1440px] gap-10 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20 lg:px-10 lg:py-28">
+          {/* Section heading */}
           <div>
-            <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-500 sm:text-xs sm:tracking-[0.18em]">
-              Capabilities
-            </p>
+            <div className="mb-5 flex items-center gap-3">
+              <span
+                aria-hidden="true"
+                className="h-px w-8 shrink-0 bg-gradient-to-r from-blue-500 to-purple-500"
+              />
 
-            <h2 className="mt-4 max-w-sm text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl">
-              What I bring to the table.
+              <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500 sm:text-xs sm:tracking-[0.2em]">
+                Capabilities
+              </span>
+            </div>
+
+            <h2 className="max-w-md text-3xl font-semibold leading-[1.02] tracking-[-0.045em] text-white sm:text-4xl lg:text-[3.25rem]">
+              What I bring to{" "}
+              <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">
+                every project.
+              </span>
             </h2>
 
             <p className="mt-5 max-w-sm text-sm leading-7 text-zinc-500">
-              The tools and principles I use to turn concepts into polished
-              digital products.
+              A combination of frontend craftsmanship, backend development
+              and practical technical decisions.
             </p>
           </div>
 
+          {/* Capability cards */}
           <div className="grid gap-3 sm:grid-cols-2">
             {capabilities.map((capability) => {
               const Icon = icons[capability.icon];
@@ -336,13 +420,14 @@ export function AboutPage() {
 
             <div className="relative flex flex-col justify-between gap-8 sm:gap-10 lg:flex-row lg:items-end">
               <div className="min-w-0">
-                <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-500 sm:text-xs sm:tracking-[0.18em]">
+                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-zinc-500 sm:text-xs">
                   Let&apos;s build
                 </p>
 
                 <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-[-0.045em] text-white sm:text-4xl lg:text-5xl">
                   Have an idea?
                   <br />
+
                   <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">
                     Let&apos;s make it real.
                   </span>
@@ -354,6 +439,7 @@ export function AboutPage() {
                 className="group inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:opacity-90 sm:w-fit"
               >
                 Start a conversation
+
                 <ArrowUpRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </Link>
             </div>
@@ -363,6 +449,7 @@ export function AboutPage() {
               className="group relative mt-7 inline-flex min-h-10 items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white sm:mt-8"
             >
               Or explore my projects
+
               <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
           </div>

@@ -1,4 +1,10 @@
-import { ArrowUpRight, Code2, Layers3, PenTool, Users } from "lucide-react";
+import {
+  ArrowUpRight,
+  Code2,
+  Layers3,
+  PenTool,
+  Users,
+} from "lucide-react";
 import Link from "next/link";
 
 import { capabilities } from "@/lib/constants";
@@ -39,14 +45,15 @@ export function About() {
 
           <div className="mt-7 max-w-2xl space-y-4 text-[15px] leading-7 text-zinc-400 sm:text-base">
             <p>
-              I&apos;m a full-stack web developer focused on building modern,
-              performant and purposeful digital experiences.
+              I&apos;m Hasnain Raza, a full-stack web developer focused on
+              helping businesses, professionals and individuals build a strong
+              digital presence.
             </p>
 
             <p>
-              From thoughtful interfaces to scalable backend systems, I care
-              about the details that make a product feel fast, clear and
-              effortless to use.
+              I build modern, responsive and performance-focused websites
+              around each client&apos;s needs — with clean implementation,
+              thoughtful user experiences and SEO in mind.
             </p>
           </div>
 
@@ -79,7 +86,8 @@ export function About() {
             </p>
 
             <p className="mt-2 max-w-md text-sm leading-6 text-zinc-500">
-              A practical approach to design, development and delivery.
+              The skills I use to turn ideas and requirements into reliable
+              digital experiences.
             </p>
           </div>
 
