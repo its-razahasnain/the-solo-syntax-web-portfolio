@@ -22,17 +22,15 @@ export function Navbar() {
           className="flex h-20 items-center justify-between"
           aria-label="Main navigation"
         >
-          {/* Brand */}
           <Link
             href="/"
             onClick={closeMenu}
             className="group flex items-center gap-3"
             aria-label="The Solo Syntax home"
           >
-            {/* Your actual logo mark */}
             <div className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full">
               <Image
-                src="/logo-mark.png"
+                src="/brand/logo-mark.svg"
                 alt="The Solo Syntax logo"
                 width={36}
                 height={36}
@@ -41,14 +39,12 @@ export function Navbar() {
               />
             </div>
 
-            {/* Brand name */}
             <span className="relative text-[17px] font-semibold tracking-[-0.035em] text-white transition-opacity duration-200 group-hover:opacity-80 sm:text-[18px]">
               The Solo{" "}
               <span className="font-medium text-zinc-300">Syntax</span>
             </span>
           </Link>
 
-          {/* Desktop navigation */}
           <div className="hidden items-center gap-8 md:flex">
             {siteConfig.navigation
               .filter((item) => item.label !== "Home")
@@ -71,7 +67,6 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
           <button
             type="button"
             onClick={() => setIsOpen((open) => !open)}
@@ -90,7 +85,6 @@ export function Navbar() {
           </button>
         </nav>
 
-        {/* Mobile navigation */}
         <div
           id="mobile-navigation"
           className={`overflow-hidden transition-all duration-300 ease-out md:hidden ${

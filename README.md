@@ -294,3 +294,4 @@ This project is a personal portfolio website. The source code and visual design 
 *Built with code, curiosity, and a lot of syntax.*
 
 **The Solo Syntax**
+

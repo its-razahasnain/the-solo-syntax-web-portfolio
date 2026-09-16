@@ -2,10 +2,12 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const projectTypes = new Set([
-  "Website",
+  "Business Website",
+  "Portfolio Website",
   "Web Application",
-  "Portfolio",
   "SaaS Product",
+  "Landing Page",
+  "Custom Website",
   "Other",
 ]);
 
@@ -46,6 +48,7 @@ export async function POST(request: Request) {
     const honeypot =
       typeof body.website === "string" ? body.website.trim() : "";
 
+    // Silent honeypot response for spam submissions.
     if (honeypot) {
       return NextResponse.json({ success: true });
     }
@@ -112,7 +115,13 @@ export async function POST(request: Request) {
       replyTo: email,
       subject: `New project inquiry — ${projectType}`,
       html: `
-        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #18181b;">
+        <div
+          style="
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #18181b;
+          "
+        >
           <h2>New project inquiry</h2>
 
           <p>

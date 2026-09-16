@@ -1,13 +1,20 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { ArrowUpRight, Check, Loader2 } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowUpRight,
+  Check,
+  Loader2,
+} from "lucide-react";
 
 const projectTypes = [
-  "Website",
+  "Business Website",
+  "Portfolio Website",
   "Web Application",
-  "Portfolio",
   "SaaS Product",
+  "Landing Page",
+  "Custom Website",
   "Other",
 ] as const;
 
@@ -101,7 +108,7 @@ export function ContactForm() {
             autoComplete="name"
             required
             maxLength={100}
-            placeholder="John Doe"
+            placeholder="Your name"
             className="h-12 w-full min-w-0 rounded-xl border border-white/[0.08] bg-black/20 px-4 text-sm text-white outline-none placeholder:text-zinc-700 transition-colors focus:border-indigo-400/50 focus:bg-white/[0.035]"
           />
         </div>
@@ -121,7 +128,7 @@ export function ContactForm() {
             autoComplete="email"
             required
             maxLength={254}
-            placeholder="john@example.com"
+            placeholder="you@example.com"
             className="h-12 w-full min-w-0 rounded-xl border border-white/[0.08] bg-black/20 px-4 text-sm text-white outline-none placeholder:text-zinc-700 transition-colors focus:border-indigo-400/50 focus:bg-white/[0.035]"
           />
         </div>
@@ -135,23 +142,40 @@ export function ContactForm() {
           What are you looking to build?
         </label>
 
-        <select
-          id="projectType"
-          name="projectType"
-          defaultValue=""
-          required
-          className="h-12 w-full min-w-0 rounded-xl border border-white/[0.08] bg-black/20 px-4 text-sm text-zinc-300 outline-none transition-colors focus:border-indigo-400/50 focus:bg-white/[0.035]"
-        >
-          <option value="" disabled>
-            Select a project type
-          </option>
-
-          {projectTypes.map((type) => (
-            <option key={type} value={type}>
-              {type}
+        <div className="relative">
+          <select
+            id="projectType"
+            name="projectType"
+            defaultValue=""
+            required
+            className="h-12 w-full min-w-0 appearance-none rounded-xl border border-white/[0.08] bg-[#09090b] px-4 pr-11 text-sm text-zinc-300 outline-none transition-all duration-200 hover:border-white/[0.13] focus:border-indigo-400/50 focus:bg-white/[0.035]"
+          >
+            <option value="" disabled className="bg-[#09090b] text-zinc-500">
+              Select a project type
             </option>
-          ))}
-        </select>
+
+            {projectTypes.map((type) => (
+              <option
+                key={type}
+                value={type}
+                className="bg-[#09090b] text-zinc-200"
+              >
+                {type}
+              </option>
+            ))}
+          </select>
+
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-zinc-500"
+          >
+            <ArrowDown className="h-4 w-4" />
+          </div>
+        </div>
+
+        <p className="mt-2 text-xs text-zinc-600">
+          Choose the option that best describes your project.
+        </p>
       </div>
 
       <div className="mt-5 sm:mt-6">
@@ -194,7 +218,6 @@ export function ContactForm() {
         />
       </div>
 
-      {/* Honeypot field — invisible to normal users */}
       <div
         aria-hidden="true"
         className="absolute left-[-9999px] h-0 w-0 overflow-hidden"

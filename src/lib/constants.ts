@@ -1,27 +1,42 @@
 export const siteConfig = {
   name: "The Solo Syntax",
 
+  person: {
+    name: "Hasnain Raza",
+    title: "Full-Stack Web Developer",
+    location: "Pakistan",
+  },
+
   url: "https://thesolosyntax.vercel.app",
 
   description:
-    "Modern websites built with clean code, thoughtful design and real performance.",
+    "The Solo Syntax is the portfolio of Hasnain Raza, a full-stack web developer building modern, responsive and performance-focused websites and web applications.",
 
   contact: {
-    email: "hello@the-solo-syntax.dev",
+    email: "thesolosyntax@gmail.com",
+    responseTime: "Usually within 24 hours",
   },
 
   socialLinks: [
     {
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/its-razahasnain",
     },
     {
       label: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/hasnainraza-pk/",
     },
     {
       label: "X",
-      href: "https://x.com",
+      href: "https://x.com/thesolosyntax",
+    },
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/thesolosyntax/",
+    },
+    {
+      label: "YouTube",
+      href: "https://www.youtube.com/@TheSoloSyntax",
     },
   ],
 
@@ -38,25 +53,25 @@ export const capabilities = [
   {
     title: "Frontend Development",
     description:
-      "Responsive, accessible and polished interfaces built with modern frontend technologies.",
+      "Responsive, polished interfaces built with modern frontend technologies and a strong focus on usability and performance.",
     icon: "code",
   },
   {
     title: "Backend Development",
     description:
-      "Reliable APIs, server-side functionality and scalable application architecture.",
+      "Reliable server-side functionality and APIs built around the actual requirements of each project.",
     icon: "layers",
   },
   {
     title: "UI / UX",
     description:
-      "Thoughtful interfaces focused on clarity, usability and meaningful user experiences.",
+      "Thoughtful interfaces focused on clarity, usability and creating a straightforward experience for users.",
     icon: "pen",
   },
   {
     title: "Full-Stack Development",
     description:
-      "End-to-end digital experiences connecting strong frontend interfaces with dependable backend systems.",
+      "End-to-end web experiences connecting strong frontend interfaces with dependable backend functionality.",
     icon: "users",
   },
 ] as const;
@@ -66,7 +81,7 @@ export const projects = [
     name: "Tavern",
     category: "Full-Stack Web Application",
     description:
-      "A full-stack digital experience built with a focus on modern interfaces, reliable functionality and a polished user experience.",
+      "A restaurant-focused digital experience designed to bring menus, reservations and a modern online presence together.",
     variant: "tavern",
     href: "/projects/tavern",
     liveUrl: "https://tavern-virid.vercel.app/",
@@ -75,7 +90,7 @@ export const projects = [
     name: "Nexora",
     category: "Business Website",
     description:
-      "A modern digital experience built for a forward-thinking brand.",
+      "A modern business website concept focused on creating a clear and professional digital presence.",
     variant: "nexora",
     href: "/projects/nexora",
   },
@@ -83,7 +98,7 @@ export const projects = [
     name: "Velora",
     category: "SaaS Website",
     description:
-      "A clean SaaS experience focused on clarity, conversion and usability.",
+      "A SaaS website concept designed around clarity, usability and a focused product experience.",
     variant: "velora",
     href: "/projects/velora",
   },
@@ -91,7 +106,7 @@ export const projects = [
     name: "Lume",
     category: "Portfolio Website",
     description:
-      "An immersive portfolio experience designed around visual storytelling.",
+      "A portfolio website concept built around visual storytelling and a focused digital presentation.",
     variant: "lume",
     href: "/projects/lume",
   },
