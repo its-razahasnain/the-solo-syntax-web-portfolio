@@ -7,7 +7,7 @@ import { ProjectsPage } from "@/components/sections/projects-page";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Explore selected projects by The Solo Syntax — modern websites and digital products built with thoughtful design and clean engineering.",
+    "Explore selected web projects by Hasnain Raza, including Tavern and upcoming concepts by The Solo Syntax.",
 };
 
 export default function ProjectsRoute() {

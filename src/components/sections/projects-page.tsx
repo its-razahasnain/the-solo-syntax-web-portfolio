@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 import { projects } from "@/lib/constants";
 
 type ProjectVariant = "tavern" | "nexora" | "velora" | "lume";
 
-function BrowserBar() {
+function BrowserBar({ label }: { label: string }) {
   return (
     <div className="flex h-8 items-center gap-1.5 border-b border-white/[0.07] bg-[#090a0d] px-3 sm:h-9 sm:gap-2 sm:px-3.5">
       <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-white/20" />
@@ -15,11 +16,27 @@ function BrowserBar() {
 
       <div className="ml-2.5 flex h-4 min-w-0 flex-1 items-center rounded-full border border-white/[0.05] bg-white/[0.025] px-2.5 sm:ml-3 sm:px-3">
         <span className="truncate font-mono text-[6px] text-zinc-700 sm:text-[6.5px]">
-          tavern-virid.vercel.app
+          {label}
         </span>
       </div>
 
       <div className="w-2 shrink-0 sm:w-3" />
+    </div>
+  );
+}
+
+function ComingSoonOverlay({ name }: { name: string }) {
+  return (
+    <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center">
+      <div className="flex flex-col items-center gap-2 rounded-2xl border border-white/[0.1] bg-black/45 px-5 py-4 text-center shadow-2xl backdrop-blur-md">
+        <span className="text-[9px] font-medium uppercase tracking-[0.2em] text-white/90">
+          {name}
+        </span>
+
+        <span className="rounded-full border border-white/[0.1] bg-white/[0.05] px-3 py-1.5 text-[8px] font-medium uppercase tracking-[0.18em] text-zinc-400">
+          Coming Soon
+        </span>
+      </div>
     </div>
   );
 }
@@ -94,8 +111,10 @@ function TavernMockup() {
 
 function GenericMockup({
   variant,
+  name,
 }: {
   variant: Exclude<ProjectVariant, "tavern">;
+  name: string;
 }) {
   const styles = {
     nexora: {
@@ -120,7 +139,7 @@ function GenericMockup({
       />
 
       <div className="absolute inset-x-[7%] top-[9%] overflow-hidden rounded-xl border border-white/[0.1] bg-[#11131a] shadow-2xl sm:inset-x-[8%] sm:top-[10%]">
-        <BrowserBar />
+        <BrowserBar label={`${name.toLowerCase()} · concept preview`} />
 
         <div className="p-3 sm:p-5">
           <div className="h-1.5 w-14 rounded-full bg-white/10 sm:h-2 sm:w-16" />
@@ -130,22 +149,54 @@ function GenericMockup({
           <div className="mt-2.5 h-1.5 w-[50%] rounded-full bg-white/[0.045] sm:mt-3 sm:h-2" />
 
           <div className="mt-5 grid grid-cols-3 gap-1.5 sm:mt-7 sm:gap-2">
-            <div className={`h-16 rounded-xl sm:h-20 ${styles.accent}`} />
+            <div
+              className={`h-16 rounded-xl sm:h-20 ${styles.accent}`}
+            />
+
             <div className="h-16 rounded-xl bg-white/[0.035] sm:h-20" />
+
             <div className="h-16 rounded-xl bg-white/[0.025] sm:h-20" />
           </div>
         </div>
       </div>
+
+      <ComingSoonOverlay name={name} />
     </div>
   );
 }
 
-function ProjectMockup({ variant }: { variant: ProjectVariant }) {
+function ProjectMockup({
+  variant,
+  name,
+}: {
+  variant: ProjectVariant;
+  name: string;
+}) {
   if (variant === "tavern") {
     return <TavernMockup />;
   }
 
-  return <GenericMockup variant={variant} />;
+  return <GenericMockup variant={variant} name={name} />;
+}
+
+function ProjectStatus({
+  projectName,
+}: {
+  projectName: string;
+}) {
+  const isBuilt = projectName === "Tavern";
+
+  return (
+    <span
+      className={`inline-flex items-center rounded-full border px-2.5 py-1 text-[9px] font-medium uppercase tracking-[0.1em] sm:text-[10px] ${
+        isBuilt
+          ? "border-white/[0.12] bg-white/[0.05] text-zinc-300"
+          : "border-white/[0.08] bg-white/[0.02] text-zinc-600"
+      }`}
+    >
+      {isBuilt ? "Built" : "Concept"}
+    </span>
+  );
 }
 
 export function ProjectsPage() {
@@ -207,6 +258,7 @@ export function ProjectsPage() {
                   className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:opacity-90"
                 >
                   Explore projects
+
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
 
@@ -215,6 +267,7 @@ export function ProjectsPage() {
                   className="group inline-flex min-h-11 items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white"
                 >
                   Start a project
+
                   <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </Link>
               </div>
@@ -270,7 +323,9 @@ export function ProjectsPage() {
                     </div>
 
                     <div className="flex items-center justify-between gap-4">
-                      <span className="text-sm text-zinc-500">Frontend</span>
+                      <span className="text-sm text-zinc-500">
+                        Frontend
+                      </span>
 
                       <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-zinc-600 sm:text-[10px] sm:tracking-[0.14em]">
                         02
@@ -334,81 +389,104 @@ export function ProjectsPage() {
             </div>
 
             <span className="hidden shrink-0 font-mono text-xs text-zinc-600 sm:block">
-              04 PROJECTS
+              01 BUILT · 03 COMING SOON
             </span>
           </div>
 
           <div className="grid gap-5 lg:grid-cols-2">
-            {projects.map((project, index) => (
-              <Link
-                key={project.name}
-                href={project.href}
-                className={`group relative min-w-0 overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-white/[0.02] transition-all duration-500 hover:border-white/[0.14] hover:bg-white/[0.035] sm:rounded-[1.75rem] ${
-                  index === 0 ? "lg:col-span-2" : ""
-                }`}
-              >
-                <div
-                  className={`relative min-w-0 overflow-hidden border-b border-white/[0.07] bg-[#090a0d] ${
-                    index === 0
-                      ? "min-h-[300px] sm:min-h-[440px]"
-                      : "min-h-[245px] sm:min-h-[340px]"
+            {projects.map((project, index) => {
+              const isBuilt = project.status === "live";
+
+              return (
+                <Link
+                  key={project.name}
+                  href={project.href}
+                  className={`group relative min-w-0 overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-white/[0.02] transition-all duration-500 hover:border-white/[0.14] hover:bg-white/[0.035] sm:rounded-[1.75rem] ${
+                    index === 0 ? "lg:col-span-2" : ""
                   }`}
                 >
                   <div
-                    aria-hidden="true"
-                    className="absolute inset-0 opacity-[0.035]"
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)",
-                      backgroundSize: "42px 42px",
-                    }}
-                  />
-
-                  <div
-                    aria-hidden="true"
-                    className="absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-blue-500/[0.13] via-indigo-500/[0.08] to-purple-500/[0.13] blur-[60px] transition-transform duration-700 group-hover:scale-125 sm:h-56 sm:w-56 sm:blur-[70px]"
-                  />
-
-                  <div
-                    className={`absolute left-1/2 top-1/2 w-[92%] -translate-x-1/2 -translate-y-[45%] overflow-hidden rounded-xl border border-white/[0.1] bg-[#0c0d11] shadow-2xl shadow-black/40 transition-transform duration-700 sm:w-[86%] sm:rounded-2xl ${
+                    className={`relative min-w-0 overflow-hidden border-b border-white/[0.07] bg-[#090a0d] ${
                       index === 0
-                        ? "max-w-[900px] rotate-[-1.5deg] sm:rotate-[-2deg]"
-                        : "max-w-[560px] rotate-[-2deg] sm:rotate-[-3deg]"
+                        ? "min-h-[300px] sm:min-h-[440px]"
+                        : "min-h-[245px] sm:min-h-[340px]"
                     }`}
                   >
-                    <BrowserBar />
-
-                    <ProjectMockup
-                      variant={project.variant as ProjectVariant}
+                    <div
+                      aria-hidden="true"
+                      className="absolute inset-0 opacity-[0.035]"
+                      style={{
+                        backgroundImage:
+                          "linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)",
+                        backgroundSize: "42px 42px",
+                      }}
                     />
+
+                    <div
+                      aria-hidden="true"
+                      className="absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-blue-500/[0.13] via-indigo-500/[0.08] to-purple-500/[0.13] blur-[60px] transition-transform duration-700 group-hover:scale-125 sm:h-56 sm:w-56 sm:blur-[70px]"
+                    />
+
+                    <div
+                      className={`absolute left-1/2 top-1/2 w-[92%] -translate-x-1/2 -translate-y-[45%] overflow-hidden rounded-xl border border-white/[0.1] bg-[#0c0d11] shadow-2xl shadow-black/40 transition-transform duration-700 sm:w-[86%] sm:rounded-2xl ${
+                        index === 0
+                          ? "max-w-[900px] rotate-[-1.5deg] sm:rotate-[-2deg]"
+                          : "max-w-[560px] rotate-[-2deg] sm:rotate-[-3deg]"
+                      }`}
+                    >
+                      <ProjectMockup
+                        variant={project.variant as ProjectVariant}
+                        name={project.name}
+                      />
+                    </div>
+
+                    <span className="absolute bottom-4 left-4 font-mono text-[9px] tracking-[0.14em] text-zinc-600 sm:bottom-5 sm:left-5 sm:text-[10px] sm:tracking-[0.16em]">
+                      0{index + 1}
+                    </span>
+
+                    <div className="absolute bottom-4 right-4 flex max-w-[70%] items-center gap-2 sm:bottom-5 sm:right-5">
+                      <ProjectStatus projectName={project.name} />
+
+                      <span className="max-w-[58%] truncate rounded-full border border-white/[0.08] bg-black/30 px-2.5 py-1.5 text-[9px] font-medium uppercase tracking-[0.1em] text-zinc-500 backdrop-blur-md sm:max-w-none sm:px-3 sm:text-[10px] sm:tracking-[0.14em]">
+                        {project.category}
+                      </span>
+                    </div>
                   </div>
 
-                  <span className="absolute bottom-4 left-4 font-mono text-[9px] tracking-[0.14em] text-zinc-600 sm:bottom-5 sm:left-5 sm:text-[10px] sm:tracking-[0.16em]">
-                    0{index + 1}
-                  </span>
+                  <div className="flex min-w-0 items-start justify-between gap-4 p-5 sm:gap-6 sm:p-7">
+                    <div className="min-w-0">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <h3 className="text-xl font-medium tracking-[-0.025em] text-white sm:text-2xl">
+                          {project.name}
+                        </h3>
 
-                  <span className="absolute bottom-4 right-4 max-w-[58%] truncate rounded-full border border-white/[0.08] bg-black/30 px-2.5 py-1.5 text-[9px] font-medium uppercase tracking-[0.1em] text-zinc-500 backdrop-blur-md sm:bottom-5 sm:right-5 sm:max-w-none sm:px-3 sm:text-[10px] sm:tracking-[0.14em]">
-                    {project.category}
-                  </span>
-                </div>
+                        <ProjectStatus projectName={project.name} />
+                      </div>
 
-                <div className="flex min-w-0 items-start justify-between gap-4 p-5 sm:gap-6 sm:p-7">
-                  <div className="min-w-0">
-                    <h3 className="text-xl font-medium tracking-[-0.025em] text-white sm:text-2xl">
-                      {project.name}
-                    </h3>
+                      <p className="mt-2 max-w-xl text-sm leading-6 text-zinc-500">
+                        {project.description}
+                      </p>
 
-                    <p className="mt-2 max-w-xl text-sm leading-6 text-zinc-500">
-                      {project.description}
-                    </p>
+                      {isBuilt ? (
+                        <p className="mt-3 text-xs text-zinc-600">
+                          Built from the ground up as a full-stack portfolio
+                          project.
+                        </p>
+                      ) : (
+                        <p className="mt-3 text-xs text-zinc-600">
+                          Concept project — currently in the planning and
+                          development stage.
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.025] text-zinc-500 transition-all duration-300 group-hover:border-white/[0.16] group-hover:bg-white/[0.06] group-hover:text-white">
+                      <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </div>
                   </div>
-
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.025] text-zinc-500 transition-all duration-300 group-hover:border-white/[0.16] group-hover:bg-white/[0.06] group-hover:text-white">
-                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                  </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
 
           {/* =========================================================
@@ -436,6 +514,7 @@ export function ProjectsPage() {
                   <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-[-0.045em] text-white sm:text-4xl lg:text-5xl">
                     Have an idea?
                     <br />
+
                     <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">
                       Let&apos;s make it real.
                     </span>
@@ -447,6 +526,7 @@ export function ProjectsPage() {
                   className="group inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:opacity-90 sm:w-fit"
                 >
                   Start a conversation
+
                   <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </Link>
               </div>
@@ -456,6 +536,7 @@ export function ProjectsPage() {
                 className="group relative mt-7 inline-flex min-h-10 items-center gap-2 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white sm:mt-8"
               >
                 Or learn more about me
+
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
             </div>

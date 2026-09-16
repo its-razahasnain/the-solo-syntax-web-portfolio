@@ -11,17 +11,23 @@ export function Projects() {
       <Container>
         <div className="mb-10 flex flex-col gap-6 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
           <div className="min-w-0">
-            <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500 sm:text-sm sm:tracking-[0.2em]">
+            <p className="mb-3 flex items-center gap-3 text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500 sm:text-sm sm:tracking-[0.2em]">
+              <span className="h-px w-7 bg-gradient-to-r from-blue-500 to-purple-500" />
               Selected Work
             </p>
 
-            <h2 className="max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              A selection of work
+            <h2 className="max-w-2xl text-4xl font-semibold leading-[0.95] tracking-[-0.055em] text-white sm:text-5xl lg:text-[3.5rem]">
+              A selection of
+              <br />
+              <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">
+                work.
+              </span>
             </h2>
 
-            <p className="mt-3 max-w-xl text-sm leading-6 text-zinc-500 sm:text-[15px] sm:leading-7">
-              A mix of real client-focused experience and conceptual products
-              built to explore modern web experiences.
+            <p className="mt-4 max-w-xl text-sm leading-6 text-zinc-500 sm:mt-5 sm:text-[15px] sm:leading-7">
+              A focused selection featuring Tavern, a live restaurant concept,
+              alongside upcoming concepts exploring different digital
+              experiences.
             </p>
           </div>
 

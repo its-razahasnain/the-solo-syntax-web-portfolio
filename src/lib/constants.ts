@@ -81,18 +81,20 @@ export const projects = [
     name: "Tavern",
     category: "Full-Stack Web Application",
     description:
-      "A restaurant-focused digital experience designed to bring menus, reservations and a modern online presence together.",
+      "A full-stack restaurant website concept built to show how menus, reservations and a stronger digital presence can work together.",
     variant: "tavern",
     href: "/projects/tavern",
     liveUrl: "https://tavern-virid.vercel.app/",
+    status: "live",
   },
   {
     name: "Nexora",
     category: "Business Website",
     description:
-      "A modern business website concept focused on creating a clear and professional digital presence.",
+      "A business website concept focused on creating a clear, professional and modern digital presence.",
     variant: "nexora",
     href: "/projects/nexora",
+    status: "concept",
   },
   {
     name: "Velora",
@@ -101,6 +103,7 @@ export const projects = [
       "A SaaS website concept designed around clarity, usability and a focused product experience.",
     variant: "velora",
     href: "/projects/velora",
+    status: "concept",
   },
   {
     name: "Lume",
@@ -109,5 +112,6 @@ export const projects = [
       "A portfolio website concept built around visual storytelling and a focused digital presentation.",
     variant: "lume",
     href: "/projects/lume",
+    status: "concept",
   },
 ] as const;
