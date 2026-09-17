@@ -21,6 +21,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
@@ -39,7 +40,7 @@ a {
 }
 
 ::selection {
-  background: rgba(124, 58, 237, 0.35);
+  background: rgba(99, 102, 241, 0.28);
   color: #ffffff;
 }
 
@@ -48,8 +49,8 @@ a {
 -------------------------------- */
 
 :focus-visible {
-  outline: 2px solid rgba(129, 140, 248, 0.9);
-  outline-offset: 4px;
+  outline: 2px solid rgba(129, 140, 248, 0.8);
+  outline-offset: 3px;
 }
 
 /* ------------------------------
@@ -68,7 +69,12 @@ a {
 -------------------------------- */
 
 .gradient-text {
-  background: linear-gradient(90deg, #60a5fa 0%, #8b5cf6 50%, #a78bfa 100%);
+  background: linear-gradient(
+    90deg,
+    #60a5fa 0%,
+    #8b5cf6 50%,
+    #a78bfa 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -155,38 +161,5 @@ a {
     width: 280px;
     height: 280px;
     filter: blur(90px);
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-::selection {
-  background: rgba(99, 102, 241, 0.28);
-  color: white;
-}
-
-:focus-visible {
-  outline: 2px solid rgba(129, 140, 248, 0.8);
-  outline-offset: 3px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }

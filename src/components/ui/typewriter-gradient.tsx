@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
 type TypewriterGradientProps = {
   words: readonly string[];
@@ -15,61 +15,89 @@ export function TypewriterGradient({
   deletingSpeed = 40,
   pauseDuration = 2000,
 }: TypewriterGradientProps) {
-  const [wordIndex, setWordIndex] = useState(0);
-  const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
+  const textRef = useRef<HTMLSpanElement>(null);
+  const liveRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const currentWord = words[wordIndex];
+    const textElement = textRef.current;
+    const liveElement = liveRef.current;
 
-    const delay =
-      !isDeleting && displayText === currentWord
-        ? pauseDuration
-        : isDeleting
-          ? deletingSpeed
-          : typingSpeed;
+    if (!textElement || words.length === 0) {
+      return;
+    }
 
-    const timeout = window.setTimeout(() => {
-      if (!isDeleting) {
-        if (displayText === currentWord) {
-          setIsDeleting(true);
+    let wordIndex = 0;
+    let displayText = "";
+    let isDeleting = false;
+    let timeoutId: number;
+
+    const tick = () => {
+      const currentWord = words[wordIndex] ?? "";
+
+      if (!isDeleting && displayText === currentWord) {
+        isDeleting = true;
+        timeoutId = window.setTimeout(tick, pauseDuration);
+        return;
+      }
+
+      if (isDeleting) {
+        if (displayText.length > 0) {
+          displayText = currentWord.slice(0, displayText.length - 1);
+          textElement.textContent = displayText;
+
+          timeoutId = window.setTimeout(tick, deletingSpeed);
           return;
         }
 
-        setDisplayText(currentWord.slice(0, displayText.length + 1));
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+
+        if (liveElement) {
+          liveElement.textContent = words[wordIndex] ?? "";
+        }
+
+        timeoutId = window.setTimeout(tick, typingSpeed);
         return;
       }
 
-      if (displayText.length > 0) {
-        setDisplayText(currentWord.slice(0, displayText.length - 1));
-        return;
-      }
+      displayText = currentWord.slice(0, displayText.length + 1);
+      textElement.textContent = displayText;
 
-      setIsDeleting(false);
-      setWordIndex((current) => (current + 1) % words.length);
-    }, delay);
+      timeoutId = window.setTimeout(tick, typingSpeed);
+    };
 
-    return () => window.clearTimeout(timeout);
-  }, [
-    displayText,
-    isDeleting,
-    wordIndex,
-    words,
-    typingSpeed,
-    deletingSpeed,
-    pauseDuration,
-  ]);
+    textElement.textContent = "";
+
+    if (liveElement) {
+      liveElement.textContent = words[0] ?? "";
+    }
+
+    timeoutId = window.setTimeout(tick, typingSpeed);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [words, typingSpeed, deletingSpeed, pauseDuration]);
 
   return (
-    <span
-      aria-live="polite"
-      className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent"
-    >
-      {displayText}
+    <>
       <span
         aria-hidden="true"
-        className="ml-0.5 inline-block h-[0.9em] w-[2px] translate-y-[0.08em] bg-gradient-to-b from-blue-400 to-purple-500 align-baseline opacity-80"
+        className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent"
+      >
+        <span ref={textRef} />
+        <span
+          aria-hidden="true"
+          className="ml-0.5 inline-block h-[0.9em] w-[2px] translate-y-[0.08em] bg-gradient-to-b from-blue-400 to-purple-500 align-baseline opacity-80"
+        />
+      </span>
+
+      <span
+        ref={liveRef}
+        aria-live="polite"
+        aria-atomic="true"
+        className="sr-only"
       />
-    </span>
+    </>
   );
 }

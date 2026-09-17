@@ -53,8 +53,14 @@ export function Hero() {
           <h1 className="max-w-[780px] text-[clamp(2.85rem,8.5vw,5.75rem)] font-semibold leading-[0.89] tracking-[-0.065em] text-white sm:text-[clamp(3.2rem,7vw,5.75rem)]">
             <span className="block">I Build Modern Websites</span>
 
-            <span className="mt-1 block">
-              <TypewriterGradient words={heroWords} />
+            <span className="relative mt-1 block">
+              <span aria-hidden="true" className="invisible block">
+                That People Remember
+              </span>
+
+              <span className="absolute inset-0 block">
+                <TypewriterGradient words={heroWords} />
+              </span>
             </span>
           </h1>
 
@@ -72,7 +78,6 @@ export function Hero() {
               className="group inline-flex h-12 w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-blue-500 via-violet-500 to-purple-500 px-6 text-sm font-semibold text-white shadow-[0_18px_55px_rgba(99,102,241,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_65px_rgba(99,102,241,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505] min-[420px]:w-auto min-[420px]:px-7 sm:h-13"
             >
               View My Work
-
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
 
@@ -83,7 +88,6 @@ export function Hero() {
               <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/15">
                 <Play className="ml-0.5 h-3 w-3 fill-current" />
               </span>
-
               Discover More
             </Link>
           </div>
