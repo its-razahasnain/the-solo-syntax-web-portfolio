@@ -21,7 +21,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate min-h-[680px] overflow-hidden border-b border-white/[0.06] sm:min-h-[700px] lg:h-[calc(100svh-80px)] lg:min-h-[600px]"
+      className="relative isolate min-h-[680px] overflow-hidden border-b border-white/[0.06] sm:min-h-[700px] lg:h-[calc(100svh-80px)] lg:min-h-0"
     >
       {/* Ambient background */}
       <div
@@ -34,11 +34,11 @@ export function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(255,255,255,0.025),transparent_55%)]" />
       </div>
 
-      <div className="mx-auto grid min-h-[680px] max-w-[1440px] items-center px-5 py-12 sm:min-h-[700px] sm:px-8 sm:py-14 lg:h-full lg:min-h-0 lg:grid-cols-[1.08fr_0.92fr] lg:px-10 lg:py-6">
+      <div className="mx-auto grid min-h-[680px] max-w-[1440px] items-center px-5 py-12 sm:min-h-[700px] sm:px-8 sm:py-14 lg:h-full lg:min-h-0 lg:grid-cols-[1.08fr_0.92fr] lg:px-10 lg:py-2">
         {/* LEFT CONTENT */}
         <div className="relative z-10 max-w-[780px]">
           {/* Eyebrow */}
-          <div className="mb-5 flex items-center gap-3 sm:gap-4 lg:mb-6">
+          <div className="mb-4 flex items-center gap-3 sm:gap-4 lg:mb-5">
             <span
               className="h-[2px] w-8 shrink-0 rounded-full bg-gradient-to-r from-blue-500 to-violet-500 sm:w-9"
               aria-hidden="true"
@@ -50,7 +50,7 @@ export function Hero() {
           </div>
 
           {/* Main heading */}
-          <h1 className="max-w-[780px] text-[clamp(2.85rem,8.5vw,5.75rem)] font-semibold leading-[0.91] tracking-[-0.065em] text-white sm:text-[clamp(3.2rem,7vw,5.75rem)]">
+          <h1 className="max-w-[780px] text-[clamp(2.85rem,8.5vw,5.75rem)] font-semibold leading-[0.89] tracking-[-0.065em] text-white sm:text-[clamp(3.2rem,7vw,5.75rem)]">
             <span className="block">I Build Modern Websites</span>
 
             <span className="mt-1 block">
@@ -59,14 +59,14 @@ export function Hero() {
           </h1>
 
           {/* Description */}
-          <p className="mt-5 max-w-[600px] text-sm leading-6 text-zinc-400 sm:mt-6 sm:text-base sm:leading-7">
+          <p className="mt-4 max-w-[600px] text-sm leading-6 text-zinc-400 sm:mt-5 sm:text-base sm:leading-7">
             I build fast, modern websites and web experiences for businesses,
             professionals, and individuals — helping them establish a strong
             digital presence without unnecessary complexity.
           </p>
 
           {/* CTA buttons */}
-          <div className="mt-7 flex flex-col gap-3 min-[420px]:flex-row sm:mt-8">
+          <div className="mt-6 flex flex-col gap-3 min-[420px]:flex-row sm:mt-7">
             <Link
               href="#projects"
               className="group inline-flex h-12 w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-blue-500 via-violet-500 to-purple-500 px-6 text-sm font-semibold text-white shadow-[0_18px_55px_rgba(99,102,241,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_65px_rgba(99,102,241,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505] min-[420px]:w-auto min-[420px]:px-7 sm:h-13"
@@ -89,7 +89,7 @@ export function Hero() {
           </div>
 
           {/* Feature row */}
-          <div className="mt-7 flex max-w-xl flex-wrap items-center gap-x-5 gap-y-3 text-xs text-zinc-500 sm:mt-8 sm:gap-x-7 sm:text-sm">
+          <div className="mt-6 flex max-w-xl flex-wrap items-center gap-x-5 gap-y-3 text-xs text-zinc-500 sm:mt-7 sm:gap-x-7 sm:text-sm">
             <div className="flex items-center gap-2.5">
               <Zap className="h-4 w-4 shrink-0 text-blue-400" />
               <span>Fast Performance</span>
@@ -119,7 +119,7 @@ export function Hero() {
 
         {/* RIGHT VISUAL */}
         <div
-          className="relative mt-14 h-[300px] w-full sm:mt-16 sm:h-[390px] md:h-[440px] lg:mt-0 lg:h-[570px] xl:h-[620px]"
+          className="relative mt-14 h-[300px] w-full sm:mt-16 sm:h-[390px] md:h-[440px] lg:mt-0 lg:h-[540px] xl:h-[590px]"
           aria-hidden="true"
         >
           {/* Main glow */}

@@ -58,13 +58,14 @@ export function Navbar() {
                 </Link>
               ))}
 
-            <Link
-              href="/contact"
+            {/* Direct email CTA */}
+            <a
+              href="mailto:thesolosyntax@gmail.com"
               className="group inline-flex h-11 items-center gap-2 rounded-full border border-white/[0.14] bg-white/[0.025] px-5 text-sm font-medium text-white transition-all duration-200 hover:border-white/[0.25] hover:bg-white/[0.07]"
             >
               Let&apos;s talk
               <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-            </Link>
+            </a>
           </div>
 
           <button
@@ -104,14 +105,15 @@ export function Navbar() {
                 </Link>
               ))}
 
-              <Link
-                href="/contact"
+              {/* Direct email CTA */}
+              <a
+                href="mailto:thesolosyntax@gmail.com"
                 onClick={closeMenu}
                 className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-medium text-white transition-all duration-200 hover:border-white/20 hover:bg-white/[0.08]"
               >
                 Let&apos;s talk
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>

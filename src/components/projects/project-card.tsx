@@ -248,8 +248,6 @@ function ProjectStatus({ isBuilt }: { isBuilt: boolean }) {
 export function ProjectCard({ project }: ProjectCardProps) {
   const projectHref = project.href ?? "/projects";
 
-  // Tavern has a real live URL.
-  // Projects without a live URL are concepts / coming soon.
   const isBuilt = Boolean(project.liveUrl);
 
   return (
@@ -261,21 +259,31 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+        {/* Desktop metadata overlay */}
+        <div className="pointer-events-none absolute inset-x-[7%] bottom-[8%] z-30 hidden items-center justify-between gap-3 sm:flex">
+          <span className="min-w-0 rounded-full border border-white/[0.12] bg-black/55 px-3 py-2 text-[9px] font-medium uppercase tracking-[0.1em] text-zinc-300 backdrop-blur-md sm:text-[10px]">
+            {project.category}
+          </span>
+
+          <ProjectStatus isBuilt={isBuilt} />
+        </div>
       </div>
 
       {/* Project information */}
       <div className="flex flex-1 flex-col p-5 sm:p-6">
+        {/* Mobile metadata */}
+        <div className="mb-3 flex min-w-0 items-center justify-between gap-3 sm:hidden">
+          <p className="min-w-0 break-words text-[9px] font-medium uppercase tracking-[0.1em] text-zinc-500">
+            {project.category}
+          </p>
+
+          <ProjectStatus isBuilt={isBuilt} />
+        </div>
+
         <div className="flex min-w-0 items-start justify-between gap-3 sm:gap-4">
           <div className="min-w-0">
-            <div className="flex flex-wrap items-center gap-2">
-              <p className="break-words text-[10px] font-medium uppercase tracking-[0.12em] text-zinc-500 sm:text-xs sm:tracking-[0.16em]">
-                {project.category}
-              </p>
-
-              <ProjectStatus isBuilt={isBuilt} />
-            </div>
-
-            <h3 className="mt-2 text-xl font-semibold tracking-[-0.025em] text-white sm:text-2xl">
+            <h3 className="text-xl font-semibold tracking-[-0.025em] text-white sm:text-2xl">
               {project.name}
             </h3>
           </div>
