@@ -1,8 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { ArrowUpRight } from "lucide-react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   faGithub,
   faInstagram,
@@ -36,11 +38,11 @@ export function Footer() {
                 aria-label="The Solo Syntax home"
               >
                 <div className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full">
-                  <img
+                  <Image
                     src="/logo-mark.webp"
                     alt="The Solo Syntax logo"
-                    width="36"
-                    height="36"
+                    width={36}
+                    height={36}
                     className="h-9 w-9 object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
