@@ -58,7 +58,7 @@ function TavernVisual() {
         src="/projects/tavern/tavern-hero.webp"
         alt="Tavern restaurant website"
         fill
-        sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 33vw"
+        sizes="(max-width: 639px) calc(100vw - 52px), (max-width: 1023px) calc(50vw - 74px), min(394px, calc(30vw - 38px))"
         className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.025]"
       />
 
@@ -96,8 +96,7 @@ function TavernVisual() {
 
           <p className="mt-2 font-serif text-2xl leading-[0.9] tracking-[-0.04em] text-white sm:text-3xl">
             More Than
-            <br />
-            a Meal,
+            <br />a Meal,
           </p>
 
           <p className="mt-0.5 font-serif text-sm italic text-white/65 sm:text-base">
@@ -333,7 +332,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
               className="inline-flex min-h-10 items-center text-sm font-medium text-zinc-500 transition-colors duration-200 hover:text-zinc-300"
             >
               Live website
-
               <ArrowUpRight className="ml-1.5 h-4 w-4" />
             </a>
           ) : null}
