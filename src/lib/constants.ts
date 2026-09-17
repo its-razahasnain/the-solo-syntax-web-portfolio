@@ -41,11 +41,26 @@ export const siteConfig = {
   ],
 
   navigation: [
-    { label: "Home", href: "/" },
-    { label: "Projects", href: "/projects" },
-    { label: "About", href: "/about" },
-    { label: "Skills", href: "/skills" },
-    { label: "Contact", href: "/contact" },
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Projects",
+      href: "/projects",
+    },
+    {
+      label: "About",
+      href: "/about",
+    },
+    {
+      label: "Skills",
+      href: "/skills",
+    },
+    {
+      label: "Contact",
+      href: "/contact",
+    },
   ],
 } as const;
 
@@ -81,20 +96,19 @@ export const projects = [
     name: "Tavern",
     category: "Full-Stack Web Application",
     description:
-      "A full-stack restaurant website concept built to show how menus, reservations and a stronger digital presence can work together.",
+      "A restaurant-focused digital experience designed to bring menus, reservations and a modern online presence together.",
     variant: "tavern",
     href: "/projects/tavern",
     liveUrl: "https://tavernrestaurant.vercel.app/",
-    status: "live",
   },
   {
     name: "Nexora",
     category: "Business Website",
     description:
-      "A business website concept focused on creating a clear, professional and modern digital presence.",
+      "A modern business website concept focused on creating a clear and professional digital presence.",
     variant: "nexora",
-    href: "/projects/nexora",
     status: "concept",
+    href: "/projects/nexora",
   },
   {
     name: "Velora",
@@ -102,8 +116,8 @@ export const projects = [
     description:
       "A SaaS website concept designed around clarity, usability and a focused product experience.",
     variant: "velora",
-    href: "/projects/velora",
     status: "concept",
+    href: "/projects/velora",
   },
   {
     name: "Lume",
@@ -111,7 +125,7 @@ export const projects = [
     description:
       "A portfolio website concept built around visual storytelling and a focused digital presentation.",
     variant: "lume",
-    href: "/projects/lume",
     status: "concept",
+    href: "/projects/lume",
   },
 ] as const;
